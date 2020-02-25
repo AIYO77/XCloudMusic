@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="onItemClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="showPlayIv"
+                type="Boolean" />
+
+        <variable
+                name="album"
+                type="com.xw.lib_coremodel.model.bean.home.AlbumItemInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_55"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{onItemClick}"
+            android:paddingTop="@dimen/len_6"
+            android:paddingEnd="15dp"
+            android:paddingBottom="@dimen/len_6"
+            tools:ignore="RtlSymmetry">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/songImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/len_10"
+                android:padding="@dimen/len_5"
+                app:imageFromUrl="@{album.picUrl}"
+                app:isInvisible="@{showPlayIv}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{5}"
+                tools:src="@drawable/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playIv"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_song_play"
+                android:layout_marginStart="@dimen/len_10"
+                tools:visibility="visible"
+                android:visibility="invisible"
+                app:isInvisible="@{!showPlayIv}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+                android:id="@+id/includeSongInfo"
+                layout="@layout/include_song_item_common"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/songImg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

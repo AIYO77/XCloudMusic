@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="playList"
+                type="com.xw.lib_coremodel.model.bean.home.PlayListSimpleInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="102dp"
+            android:layout_height="150dp"
+            android:onClick="@{clickListener}"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playListImg"
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="@color/transparent"
+                app:imageFromUrl="@{playList.picUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{4}"
+                tools:background="@color/banner_blue" />
+
+        <View
+                android:layout_width="102dp"
+                app:layout_constraintTop_toTopOf="@id/playListImg"
+                app:layout_constraintStart_toStartOf="@id/playListImg"
+                android:background="@drawable/logo_top_mask_corner"
+                android:layout_height="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/playCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="@dimen/len_4"
+                app:drawableStartCompat="@drawable/ic_play_small"
+                android:textColor="@color/color_fffffd"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/playListImg"
+                app:layout_constraintTop_toTopOf="@id/playListImg"
+                app:playCount="@{playList.playCount}"
+                tools:text="12万" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="102dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{playList.name}"
+                android:textColor="@color/black_161616"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/playListImg"
+                app:layout_constraintTop_toBottomOf="@id/playListImg"
+                tools:text="云音乐欧美新歌榜" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

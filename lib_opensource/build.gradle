@@ -1,0 +1,119 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    allprojects {
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    api "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    api "androidx.core:core-ktx:$rootProject.ktxVersion"
+    api "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlinVersion"
+    api "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    api "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+
+    api "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    api "jp.wasabeef:glide-transformations:$rootProject.lide_transformations"
+
+    api "com.google.android.material:material:$rootProject.materialVersion"
+    api "com.google.code.gson:gson:$rootProject.gsonVersion"
+    api "com.android.support:multidex:$rootProject.multidex"
+
+    api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha03"
+
+    //paging
+    api "androidx.paging:paging-runtime-ktx:$rootProject.paging"
+
+    // retrofit2
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp"
+
+    //coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.couroutine"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+
+    //lifecycle
+    api "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-common:$rootProject.lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
+    // room
+    api "androidx.room:room-runtime:$rootProject.roomVersion"
+    api "androidx.work:work-runtime-ktx:$rootProject.workVersion"
+
+    //logger
+    api 'com.orhanobut:logger:2.2.0'
+
+    //适配
+    api "me.jessyan:autosize:$rootProject.autosize"
+
+    //banner
+    api "com.ms:Banner-androidx:$rootProject.xbanner"
+
+    //刷新
+    api "com.scwang.smart:refresh-layout-kernel:$rootProject.smartRefresh"
+
+    //ARouter
+    api "com.alibaba:arouter-api:$arouterVersion"
+
+    //leakcanary
+    debugApi "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanary"
+
+    //dialogs
+    api "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
+    api "com.afollestad.material-dialogs:lifecycle:$rootProject.materialDialogs"
+
+    //viewpager2
+    api "androidx.viewpager2:viewpager2:$rootProject.viewpager2"
+
+    api "com.jeremyliao:live-event-bus-x:$rootProject.liveEventBus"
+
+    //弹簧动画
+    api "com.facebook.rebound:rebound:$rootProject.rebound"
+
+    //圆角布局
+    api 'com.github.minminaya:GenaralRoundLayout:1.0.0'
+
+    // Testing dependencies
+    androidTestApi "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestApi "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestApi "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestApi "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestApi "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestApi "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
+    androidTestApi "com.google.truth:truth:$rootProject.truthVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+}

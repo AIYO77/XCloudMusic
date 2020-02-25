@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Base" parent="Theme.private">
+        <!--去除默认阴影-->
+        <item name="android:elevation">0dp</item>
+        <item name="android:outlineProvider">none</item>
+        <!--设置底部导航颜色-->
+        <item name="android:navigationBarColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base">
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen.Transitions" parent="AppTheme.TransStatusBar">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

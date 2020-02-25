@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.PhoneLoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_12"
+                android:layout_marginTop="@dimen/len_32"
+                android:text="@string/label_phone_login_des"
+                android:textColor="@color/black_999999"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/areaCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_45"
+                android:text="+86"
+                android:textColor="@color/color_cbcbcb"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintStart_toStartOf="@id/des"
+                app:layout_constraintTop_toBottomOf="@id/des" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/phoneEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_8"
+                android:layout_marginEnd="@dimen/len_12"
+                android:background="@null"
+                android:hint="@string/label_input_phone_num"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColor="@color/color_343434"
+                android:textColorHint="@color/color_cbcbcb"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="@id/areaCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/areaCode" />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/len_12"
+                android:layout_marginTop="@dimen/len_8"
+                android:layout_marginEnd="@dimen/len_12"
+                android:background="@color/color_cbcbcb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phoneEt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/phoneNextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_40"
+                android:layout_marginStart="@dimen/len_12"
+                android:layout_marginTop="@dimen/len_52"
+                android:layout_marginEnd="@dimen/len_12"
+                android:background="@drawable/btn_rund_bg_red_20"
+                android:gravity="center"
+                android:text="@string/label_next"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintTop_toBottomOf="@id/phoneEt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

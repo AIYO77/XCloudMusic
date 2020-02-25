@@ -1,0 +1,76 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        if (!isModule.toBoolean()) {
+            applicationId "com.xmusic.module_home"
+        }
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        if (!isModule.toBoolean()) {
+            multiDexEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+//
+//    sourceSets{
+//        main{
+//            if (isModule.toBoolean()){
+//                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+//            }else {
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                //release模式下排除debug文件夹中的所有Java文件
+//                java {
+//                    exclude 'debug/**'
+//                }
+//            }
+//        }
+//    }
+
+}
+
+dependencies {
+
+    api project(path: ':lib_common')
+
+    //ARouter
+    kapt "com.alibaba:arouter-compiler:$arouterCompiler"
+
+}

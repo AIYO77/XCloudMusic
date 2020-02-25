@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/lefttop_righttop_conner">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_55">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/changeMode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/icon_play_loop_prs_gray"
+                android:drawablePadding="@dimen/len_10"
+                android:gravity="center"
+                android:paddingStart="@dimen/len_12"
+                android:textColor="@color/color_2f2f2f"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry"
+                tools:text="@string/label_loop_play" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collectAll"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/len_16"
+                android:drawableStart="@drawable/ic_add_to_collected"
+                android:drawablePadding="@dimen/len_10"
+                android:gravity="center"
+                android:text="@string/label_collect_all"
+                android:textColor="@color/color_2f2f2f"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/line"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+                android:id="@+id/deleteAll"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:contentDescription="@string/label_collect_all"
+                android:paddingStart="@dimen/len_10"
+                android:paddingEnd="@dimen/len_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_delete" />
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="0.5dp"
+                android:layout_height="@dimen/len_24"
+                android:background="@color/color_e4e4e4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deleteAll"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_e4e4e4"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playListRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_55"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_play_queue" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

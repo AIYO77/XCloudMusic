@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="onVideoClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="onMoreClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="song"
+                type="com.xw.lib_coremodel.model.bean.Song" />
+
+        <variable
+                name="privilege"
+                type="com.xw.lib_coremodel.model.bean.home.Privilege" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_14"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/font_15"
+                app:alia="@{song.alia}"
+                app:layout_constraintEnd_toStartOf="@id/icMv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:songName="@{song.name}"
+                tools:text="爱你3000爱你3000爱你3000爱你3000爱你3000爱你3000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/des"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_14"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black_979797"
+                android:textSize="@dimen/font_13"
+                app:al="@{song.al}"
+                app:ar="@{song.ar}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/icMv"
+                app:layout_constraintStart_toEndOf="@id/tagSQ"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                tools:text="爱你3000爱你3000爱你3000爱你3000爱你3000" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tagVip"
+                android:layout_width="24dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon_vip"
+                android:visibility="gone"
+                app:isGone="@{privilege.fee != 1}"
+                app:layout_constraintBottom_toBottomOf="@id/des"
+                app:layout_constraintStart_toStartOf="@id/name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tagDj"
+                android:layout_width="24dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon_dj"
+                android:visibility="gone"
+                app:isGone="@{privilege.fee!=8}"
+                app:layout_constraintBottom_toBottomOf="@id/des"
+                app:layout_constraintStart_toEndOf="@id/tagVip" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tagSQ"
+                android:layout_width="24dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icon_sq"
+                android:visibility="gone"
+                app:isGone="@{privilege.maxbr !=999000}"
+                app:layout_constraintBottom_toBottomOf="@id/des"
+                app:layout_constraintStart_toEndOf="@id/tagDj" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icMv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:onClick="@{onVideoClick}"
+                android:visibility="visible"
+                app:isGone="@{song.mv ==0L}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/songMore"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_play_list_video" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/songMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{onMoreClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_more_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

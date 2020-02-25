@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.xmusic.module_video">
+
+    <application android:theme="@style/AppTheme">
+
+        <activity
+                android:name=".ui.activity.VideoDetailActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme.Fullscreen.Transitions" />
+
+    </application>
+</manifest>

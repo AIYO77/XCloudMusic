@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/headerImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/colorPrimary" />
+
+        <View
+                android:id="@+id/coverView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/play_list_square_top_bg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionBarWithStatusBarSize"
+                android:paddingTop="@dimen/statusBarSize"
+                app:contentInsetStart="0.0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="enterAlways|scroll"
+                app:navigationIcon="@drawable/ic_back_black"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/ToolbarStyle"
+                app:title="@string/title_playlist_square"
+                app:titleMarginStart="0dp"
+                app:titleTextColor="@color/black" />
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/catListTab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_48"
+                android:paddingEnd="@dimen/len_32"
+                app:layout_constraintTop_toBottomOf="@id/toolBar"
+                app:tabGravity="center"
+                app:tabIndicatorColor="@color/color_da2d1f"
+                app:tabIndicatorFullWidth="false"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/color_da2d1f"
+                app:tabTextColor="@color/black_fifty_percent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnMoreCat"
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_48"
+                android:layout_marginEnd="@dimen/len_6"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/len_4"
+                android:src="@drawable/ic_more_cat"
+                app:layout_constraintBottom_toBottomOf="@id/catListTab"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/catListTab" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/catListTab" />
+
+        <FrameLayout
+                android:id="@+id/bottom_container"
+                style="@style/BottomContainer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

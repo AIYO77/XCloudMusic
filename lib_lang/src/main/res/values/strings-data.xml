@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_net_error">网络异常 !</string>
+    
+    <string name="data_net_error_click_retry">请连接网络后点击屏幕重试</string>
+
+    <string name="data_error_playing_track">曲目播放错误:%s</string>
+
+    <string name="data_please_input_pwd">请输入密码</string>
+    <string name="data_please_input_email">请输入邮箱账号</string>
+    <string name="data_input_password">输入不少于六位密码</string>
+    <string name="data_change_pwd_suc">修改密码成功</string>
+</resources>

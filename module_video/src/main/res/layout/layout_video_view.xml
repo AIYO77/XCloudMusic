@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        app:corner_radius="@dimen/len_10">
+
+    <RelativeLayout
+            android:id="@+id/surface_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:gravity="center" />
+
+    <RelativeLayout
+            android:id="@+id/thumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="#000000"
+            android:scaleType="fitCenter" />
+
+    <LinearLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#99000000"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_16"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+
+        <SeekBar
+                android:id="@+id/progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:max="100"
+                android:maxHeight="4dp"
+                android:minHeight="4dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:progressDrawable="@drawable/video_seek_progress"
+                android:thumb="@drawable/video_seek_thumb"
+                tools:progress="50"
+                tools:secondaryProgress="70" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="00:00"
+                android:textColor="#ffffff" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fullscreen"
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:layout_marginEnd="@dimen/len_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/video_enlarge" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/playCountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/len_8"
+            android:layout_marginBottom="@dimen/len_8"
+            android:drawableStart="@drawable/ic_play_white"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_12"
+            tools:text="44" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/len_8"
+            android:layout_marginBottom="@dimen/len_8"
+            android:drawableStart="@drawable/ic_playing_white_small"
+            android:drawablePadding="@dimen/len_5"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_12"
+            tools:text="34:95" />
+
+
+    <LinearLayout
+            android:id="@+id/layout_top"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:paddingStart="@dimen/len_10"
+                android:paddingEnd="@dimen/len_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/video_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:text="@string/app_name" />
+    </LinearLayout>
+
+    <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible" />
+
+    <moe.codeest.enviews.ENPlayView
+            android:id="@+id/start"
+            android:layout_width="@dimen/len_48"
+            android:layout_height="@dimen/len_48"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical" />
+
+    <ProgressBar
+            android:id="@+id/bottom_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:max="100"
+            android:progressDrawable="@drawable/video_progress"
+            tools:progress="50" />
+
+</RelativeLayout>

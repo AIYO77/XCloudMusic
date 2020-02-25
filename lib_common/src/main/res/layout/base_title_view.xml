@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="title"
+                type="com.xw.lib_coremodel.model.bean.BaseTitle" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{title.title}"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showMoreIcon="@{title.showMoreIcon}"
+                app:titleColor="@{title.titleColor}"
+                app:titleSize="@{title.titleSize}"
+                tools:text="官方榜单" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

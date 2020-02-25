@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_5"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/music_anim"
+                android:visibility="gone" />
+
+        <TextView
+                android:id="@+id/error_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:textColor="@color/black_979797"
+                tools:text="@string/data_net_error" />
+
+
+    </LinearLayout>
+</layout>

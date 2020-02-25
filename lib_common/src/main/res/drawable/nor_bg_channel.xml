@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item android:drawable="@drawable/bg_channel_n" android:state_pressed="true" />-->
+<!--    <item android:drawable="@drawable/bg_channel_p" android:state_selected="true" />-->
+<!--    <item android:drawable="@drawable/bg_channel_d" android:state_enabled="false" />-->
+<!--    <item android:drawable="@drawable/bg_channel_n" />-->
+
+    <item android:state_pressed="false">
+        <shape>
+            <size android:height="@dimen/len_36" />
+            <corners android:radius="18dp"/>
+            <solid android:color="@color/color_f3f3f3"/>
+            <padding android:left="@dimen/len_8" android:right="@dimen/len_8"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape>
+            <size android:height="@dimen/len_36" />
+            <corners android:radius="18dp"/>
+            <solid android:color="@color/color_DBDBDB"/>
+            <padding android:left="@dimen/len_8" android:right="@dimen/len_8"/>
+
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,79 @@
+if (isModule.toBoolean()){
+    apply plugin: 'com.android.library'
+}else{
+    apply plugin: 'com.android.application'
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        if (!isModule.toBoolean()) {
+            applicationId "com.xmusic.module_video"
+        }
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        if (!isModule.toBoolean()) {
+            multiDexEnabled true
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            }
+        }
+    }
+
+    if (!isModule.toBoolean()){
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    api project(path: ':lib_common')
+    kapt "com.alibaba:arouter-compiler:$arouterCompiler"
+    if (!isModule.toBoolean()){
+        implementation project(path: ':module_login')
+    }
+    implementation 'com.shuyu:GSYVideoPlayer:7.1.2'
+
+}

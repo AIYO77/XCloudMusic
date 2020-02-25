@@ -1,0 +1,7 @@
+ninja: Entering directory `/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86'
+[1/2] Building CXX object CMakeFiles/algorithm-lib.dir/algorithm-lib.cpp.o
+/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/algorithm-lib.cpp:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+[2/2] Linking CXX shared library /Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/obj/x86/libalgorithm-lib.so

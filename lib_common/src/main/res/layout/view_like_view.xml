@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/likeImg"
+            android:layout_width="18dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_like"
+            tools:srcCompat="@drawable/ic_like" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/likeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:textColor="@color/color_606060"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/likeImg"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp"
+            tools:text="1000" />
+</merge>

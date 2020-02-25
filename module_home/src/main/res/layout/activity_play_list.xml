@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/playListRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.activity.PlayListActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/matchGaussianBg"
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                tools:background="@color/colorPrimary" />
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/playListAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/transparent"
+                android:clipChildren="false"
+                app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:collapsedTitleTextAppearance="@style/ToolBar.Title"
+                    app:expandedTitleMarginEnd="48dp"
+                    app:expandedTitleMarginStart="48dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <include
+                        android:id="@+id/headerLayout"
+                        layout="@layout/include_play_list_header"
+                        app:layout_collapseMode="pin"
+                        app:layout_collapseParallaxMultiplier="0.7" />
+
+                <com.xw.lib_common.view.MusicToolbar
+                        android:id="@+id/toolBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/actionBarWithStatusBarSize"
+                        app:isShowLeftTwo="true"
+                        app:layout_collapseMode="pin" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/lefttop_righttop_conner"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include
+                    android:id="@+id/includePlayAll"
+                    layout="@layout/layout_list_play_all"
+                    android:visibility="invisible" />
+
+            <com.xw.lib_common.view.StateRecycleView
+                    android:id="@+id/playListRcy"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/includePlayAll" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+                android:id="@+id/bottom_container"
+                style="@style/BottomContainer"
+                android:layout_gravity="bottom" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

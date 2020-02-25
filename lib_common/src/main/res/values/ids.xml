@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="autodispose_view_tag" type="id" />
+
+    <item name="bannerContainer" type="id" />
+    <item name="bannerViewPager" type="id" />
+    <item name="circleIndicator" type="id" />
+    <item name="numIndicator" type="id" />
+    <item name="titleView" type="id" />
+    <item name="bannerTitle" type="id" />
+    <item name="numIndicatorInside" type="id" />
+    <item name="indicatorInside" type="id" />
+    <item name="bannerDefaultImage" type="id" />
+    <item name="bannerArcView" type="id" />
+
+    <attr name="toolbarTitleColor" format="color" />
+    <attr name="toolbarMenuIconColor" format="color" />
+    <attr name="toolbarTitleSize" format="dimension" />
+
+    <item name="bottom_container" type="id" />
+    <item name="tag_animator" type="id" />
+
+</resources>

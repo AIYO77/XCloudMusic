@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="user"
+                type="com.xw.lib_coremodel.model.bean.UserInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/len_15"
+            android:paddingTop="@dimen/len_10"
+            android:paddingEnd="@dimen/len_15"
+            android:paddingBottom="@dimen/len_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userLogo"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadAvatarUrl="@{user.avatarUrl}"
+                app:loadHeight="@{50}"
+                app:loadWidth="@{50}"
+                tools:src="@drawable/ic_launcher_round" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userTag"
+                android:layout_width="@dimen/len_16"
+                android:layout_height="@dimen/len_16"
+                android:layout_marginEnd="@dimen/len_2"
+                android:layout_marginBottom="1dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/userLogo"
+                app:layout_constraintEnd_toEndOf="@id/userLogo"
+                tools:src="@drawable/icon_user_tag_vip" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_10"
+                android:drawablePadding="@dimen/len_2"
+                app:layout_constraintBottom_toTopOf="@id/userDes"
+                app:layout_constraintStart_toEndOf="@id/userLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="周杰伦"
+                tools:textColor="@color/color_363636" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintBottom_toBottomOf="@id/userLogo"
+                app:layout_constraintStart_toStartOf="@id/userName"
+                app:layout_constraintTop_toBottomOf="@id/userName"
+                tools:text="是"
+                tools:textColor="@color/black_979797" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/focusTv"
+                android:layout_width="@dimen/len_60"
+                android:layout_height="@dimen/len_24"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/selector_focus_bg"
+                android:clickable="@{!user.followed}"
+                android:drawableStart="@drawable/selector_icon_focus_on"
+                android:enabled="@{!user.followed}"
+                android:focusable="@{!user.followed}"
+                android:gravity="center"
+                android:paddingStart="@dimen/len_12"
+                android:paddingEnd="@dimen/len_4"
+                android:text="@string/label_focus"
+                android:textColor="@drawable/selector_focus_txt_color"
+                android:textSize="@dimen/font_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

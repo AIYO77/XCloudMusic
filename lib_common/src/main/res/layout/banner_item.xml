@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:background="@color/transparent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bannerImg"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            tools:background="@color/colorWhiteHalf" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bannerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp"
+            tools:background="@drawable/banner_title_color_red"
+            tools:text="独家" />
+
+</FrameLayout>

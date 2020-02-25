@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+        <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:text="@string/title_my_play_list_cat"
+                android:textColor="@color/color_2f2f2f"
+                android:textSize="@dimen/font_15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv"
+                android:layout_marginStart="@dimen/len_4"
+                android:layout_marginEnd="@dimen/len_4"
+                android:layout_toEndOf="@id/tv"
+                android:text="@string/label_long_click_edit"
+                android:textColor="@color/black_979797"
+                android:textSize="12sp"
+                tools:ignore="RelativeOverlap" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tv_btn_edit"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_24"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_btn_bg"
+                android:gravity="center"
+                android:text="@string/label_edit"
+                android:textColor="@drawable/txt_color"
+                android:textSize="@dimen/font_12" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="singer"
+                type="com.xw.lib_coremodel.model.bean.home.ArtistInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/len_15"
+            android:paddingTop="@dimen/len_10"
+            android:paddingEnd="@dimen/len_15"
+            android:paddingBottom="@dimen/len_10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/singerLogo"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/singerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_10"
+                app:layout_constraintBottom_toBottomOf="@id/singerLogo"
+                app:layout_constraintEnd_toStartOf="@id/settleIn"
+                app:layout_constraintStart_toEndOf="@id/singerLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="周杰伦"
+                tools:textColor="@color/color_363636" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/settleIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icon_settle_in"
+                android:drawablePadding="@dimen/len_4"
+                android:gravity="center_vertical"
+                android:text="@string/label_settle_in"
+                android:textColor="@color/black_979797"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone"
+                app:isGone="@{singer.accountId == null}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

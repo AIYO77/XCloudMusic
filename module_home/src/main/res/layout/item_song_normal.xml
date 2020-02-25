@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="song"
+                type="com.xw.lib_coremodel.model.bean.home.SongItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="102dp"
+            android:layout_height="150dp"
+            android:onClick="@{clickListener}"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playListImg"
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="@color/transparent"
+                app:imageFromUrl="@{song.song.album.picUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{4}"
+                tools:background="@color/banner_blue" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/len_32"
+                android:layout_height="@dimen/len_32"
+                app:layout_constraintBottom_toBottomOf="@id/playListImg"
+                app:layout_constraintEnd_toEndOf="@id/playListImg"
+                android:src="@drawable/ic_play_arrow"
+                android:layout_marginBottom="@dimen/len_6"
+                android:background="@drawable/shape_round_white"
+                android:layout_marginEnd="@dimen/len_6"
+                />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/albumTitle"
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{song.name}"
+                android:textColor="@color/black_161616"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/playListImg"
+                app:layout_constraintTop_toBottomOf="@id/playListImg"
+                tools:text="云音乐欧美新歌榜" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorDesText"
+                android:textSize="@dimen/font_12"
+                app:artists="@{song.song.album.artists}"
+                app:layout_constraintStart_toStartOf="@id/playListImg"
+                app:layout_constraintTop_toBottomOf="@id/albumTitle"
+                tools:text="云音乐欧美新歌榜云音乐欧美新歌榜" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

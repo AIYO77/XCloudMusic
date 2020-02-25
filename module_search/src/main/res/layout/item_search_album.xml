@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="album"
+                type="com.xw.lib_coremodel.model.bean.home.AlbumItemInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/len_15"
+            android:paddingTop="@dimen/len_5"
+            android:paddingEnd="@dimen/len_15"
+            android:paddingBottom="@dimen/len_5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/leftImg"
+                android:layout_width="@dimen/len_14"
+                android:layout_height="@dimen/len_45"
+                android:layout_marginStart="@dimen/len_49"
+                android:scaleType="fitStart"
+                android:src="@drawable/icon_album_d"
+                app:layout_constraintBottom_toBottomOf="@id/albumLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/albumLogo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/albumLogo"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{album.picUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{4}"
+                tools:src="@drawable/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/albumTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_7"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toTopOf="@id/albumAr"
+                app:layout_constraintStart_toEndOf="@id/leftImg"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="爱情公寓"
+                tools:textColor="@color/black_2a2a2a" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/albumAr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_10"
+                app:layout_constraintBottom_toBottomOf="@id/albumLogo"
+                app:layout_constraintStart_toStartOf="@id/albumTitle"
+                app:layout_constraintTop_toBottomOf="@id/albumTitle"
+                tools:text="xing 包含歌曲:"
+                tools:textColor="@color/black_979797" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

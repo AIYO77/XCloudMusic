@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.VerifyCodeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/len_12"
+            android:paddingEnd="@dimen/len_12">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_54"
+                android:text="@string/label_verify_send_to"
+                android:textColor="@color/black_2d2d2d"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_85"
+                android:textColor="@color/black_979797"
+                android:textSize="@dimen/font_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="+86 180****8563" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countDownTv"
+                android:layout_width="@dimen/len_70"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_979797"
+                android:textSize="@dimen/font_14"
+                app:layout_constraintBottom_toBottomOf="@id/phoneTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="@string/label_captcha_replay" />
+
+        <com.xw.lib_common.view.VerifyCodeEditText
+                android:id="@+id/verifyCodeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_38"
+                android:layout_marginTop="@dimen/len_60"
+                android:layout_marginEnd="@dimen/len_38"
+                android:inputType="number"
+                android:textSize="@dimen/font_24"
+                android:textColor="@color/black_2a2a2a"
+                app:bottomLineHeight="2dp"
+                app:bottomLineNormalColor="@color/color_e6e6e6"
+                app:bottomLineSelectedColor="@color/black_2a2a2a"
+                app:figures="4"
+                app:layout_constraintTop_toBottomOf="@id/phoneTv"
+                app:verCodeMargin="@dimen/len_20"
+                tools:text="1234" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#d23c2e</color>
+    <color name="colorPrimaryDark">#d23c2e</color>
+    <color name="colorAccent">#d23c2e</color>
+
+    <color name="color_c23323">#c23323</color>
+    <color name="color_da2d1f">#da2d1f</color>
+
+    <color name="colorTheme">#d23c2e</color>
+
+    <color name="colorTabText">#585858</color>
+
+    <color name="colorDesText">#646464</color>
+
+    <color name="color_4e4e4e">#4e4e4e</color>
+    <color name="color_e4e4e4">#e4e4e4</color>
+    <color name="color_e2e3e5">#e2e3e5</color>
+    <color name="color_303030">#303030</color>
+
+    <color name="btn_center_color">#d84033</color>
+    <color name="btn_end_color">#d33c33</color>
+    <color name="tag_red">#ed3831</color>
+    <color name="tag_yellow">#ef682e</color>
+
+    <color name="colorWhite">#ffffffff</color>
+    <color name="color_fffffd">#fffffd</color>
+    <color name="white_ten_percent">#19FFFFFF</color>
+    <color name="white_fifteen_percent">#26FFFFFF</color>
+    <color name="white_twenty_percent">#33FFFFFF</color>
+    <color name="white_thirty_percent">#4CFFFFFF</color>
+    <color name="white_forty_percent">#66FFFFFF</color>
+    <color name="white_fifty_percent">#80FFFFFF</color>
+    <color name="white_fifty_five_percent">#8cFFFFFF</color>
+    <color name="white_sixty_percent">#99FFFFFF</color>
+    <color name="white_seventy_percent">#B2FFFFFF</color>
+    <color name="white_eighty_percent">#CCFFFFFF</color>
+    <color name="white_ninety_percent">#E5FFFFFF</color>
+    <color name="white_ninety_fifty_percent">#FAFFFFFF</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black_161616">#FF161616</color>
+    <color name="black_474747">#474747</color>
+    <color name="black_2d2d2d">#2d2d2d</color>
+    <color name="black_2b2b2b">#2b2b2b</color>
+    <color name="black_2a2a2a">#2a2a2a</color>
+    <color name="black_ten_percent">#19000000</color>
+    <color name="black_fifteen_percent">#26000000</color>
+    <color name="black_twenty_percent">#33000000</color>
+    <color name="black_thirty_percent">#4C000000</color>
+    <color name="black_forty_percent">#66000000</color>
+    <color name="black_fifty_percent">#80000000</color>
+    <color name="black_sixty_percent">#99000000</color>
+    <color name="black_seventy_percent">#B2000000</color>
+    <color name="black_eighty_percent">#CC000000</color>
+    <color name="black_ninety_percent">#E5000000</color>
+
+    <color name="black_979797">#979797</color>
+    <color name="black_999999">#999999</color>
+
+    <color name="colorWhiteHalf">#80FFFFFF</color>
+
+    <color name="blue">#A17BEC0B</color>
+
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_DBDBDB">#DBDBDB</color>
+
+
+    <color name="banner_blue">#56a5f2</color>
+    <color name="banner_5784ad">#5784ad</color>
+
+    <color name="color_3e3e3e">#3e3e3e</color>
+    <color name="color_343434">#343434</color>
+    <color name="color_363636">#363636</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_f3f3f3">#f3f3f3</color>
+    <color name="color_2f2f2f">#2f2f2f</color>
+    <color name="color_7c7c7c">#7c7c7c</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_cbcbcb">#cbcbcb</color>
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="color_606060">#606060</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+
+    <color name="transparent">#00000000</color><!--透明 -->
+    <color name="transparent_ten_percent">#1A000000</color><!--透明 -->
+</resources>

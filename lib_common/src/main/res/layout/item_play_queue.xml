@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_48"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/len_6"
+            android:paddingEnd="@dimen/len_12">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:src="@drawable/icon_song_play"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameAndAr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginEnd="@dimen/len_6"
+                android:textColor="@color/black_2d2d2d"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deleteItem"
+                app:layout_constraintStart_toEndOf="@id/playState"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="刮风这天,我试过握过你手,但偏偏风渐渐把距离吹的好远好远-周杰伦" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/deleteItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_list_full_btn_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

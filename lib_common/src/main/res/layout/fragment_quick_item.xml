@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_48"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/songLogo"
+            android:layout_width="@dimen/len_36"
+            android:layout_height="@dimen/len_36"
+            android:layout_marginStart="@dimen/len_6"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/songName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_6"
+            android:layout_marginTop="@dimen/len_4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black_2d2d2d"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintStart_toEndOf="@id/songLogo"
+            app:layout_constraintTop_toTopOf="@id/songLogo"
+            tools:text="晴天" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lyric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/color_7c7c7c"
+            android:textSize="@dimen/font_9"
+            app:layout_constraintStart_toStartOf="@id/songName"
+            app:layout_constraintTop_toBottomOf="@id/songName"
+            tools:text="歌词歌词歌词歌词歌词歌词歌词歌词歌词歌词歌词歌歌词歌词歌词歌词歌词歌词歌词歌词" />
+</androidx.constraintlayout.widget.ConstraintLayout>

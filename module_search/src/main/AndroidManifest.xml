@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.xmusic.module_search">
+
+    <application>
+        <activity
+                android:name=".ui.activity.SearchActivity"
+                android:hardwareAccelerated="false"
+                android:theme="@style/AppTheme.Main" />
+    </application>
+</manifest>
+

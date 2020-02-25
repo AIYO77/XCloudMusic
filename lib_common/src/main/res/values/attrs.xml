@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="MusicToolbar">
+        <attr name="title" format="string" />
+        <attr name="subTitle" format="string" />
+        <attr name="leftOneIcon" format="reference" />
+        <attr name="isShowLeftOne" format="boolean" />
+        <attr name="leftTwoIcon" format="reference" />
+        <attr name="isShowLeftTwo" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BaseTitleView">
+        <attr name="titleString" format="string" />
+        <attr name="titleCanClick" format="boolean" />
+        <attr name="rightTxt" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="max" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="EditTextWithDel">
+        <attr name="android:textSize" format="dimension" />
+        <attr name="android:textColor" format="color" />
+        <attr name="android:textColorHint" format="color" />
+        <attr name="android:inputType" format="integer" />
+        <attr name="android:maxLength" format="integer" />
+        <attr name="android:hint" format="string" />
+        <attr name="android:text" format="string" />
+    </declare-styleable>
+
+    <!--验证码的属性-->
+    <declare-styleable name="VerifyCodeEditText">
+        <attr name="figures" format="integer" />
+        <attr name="verCodeMargin" format="dimension" />
+        <attr name="bottomLineSelectedColor" format="reference" />
+        <attr name="bottomLineNormalColor" format="reference" />
+        <attr name="bottomLineHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

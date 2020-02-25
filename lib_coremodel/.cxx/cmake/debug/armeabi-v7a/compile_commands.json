@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/armeabi-v7a",
+  "command": "/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dalgorithm_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/algorithm-lib.dir/algorithm-lib.cpp.o -c /Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/algorithm-lib.cpp",
+  "file": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/algorithm-lib.cpp"
+}
+]

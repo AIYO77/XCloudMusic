@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <size android:height="22dp" />
+
+    <solid android:color="@color/banner_blue" />
+
+    <corners
+            android:bottomRightRadius="10dp"
+            android:topLeftRadius="10dp" />
+
+    <padding
+            android:left="6dp"
+            android:right="6dp" />
+</shape>

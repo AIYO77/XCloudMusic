@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/len_5"
+        android:gravity="center"
+        android:text="@string/label_multiple"
+        android:textColor="@color/black_2a2a2a"
+        android:clickable="true"
+        android:textSize="@dimen/font_14"
+        android:visibility="visible"
+        android:drawableStart="@drawable/ic_multiple"
+        app:drawableStartCompat="@drawable/ic_multiple"
+        android:focusable="true" />

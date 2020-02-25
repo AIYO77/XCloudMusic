@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="onClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="onLongClick"
+                type="android.view.View.OnLongClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_36"
+            android:background="@drawable/nor_bg_channel"
+            android:clickable="true"
+            android:focusable="true"
+            tools:layout_width="76dp"
+            android:longClickable="true"
+            android:onClick="@{onClick}"
+            app:onLongClick="@{onLongClick}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/len_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="@dimen/len_14"
+                android:src="@drawable/ic_hot"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                android:textColor="@color/black_2b2b2b"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:autoSizeMaxTextSize="@dimen/font_14"
+                app:autoSizeMinTextSize="@dimen/font_10"
+                app:autoSizeTextType="uniform"
+                tools:text="是是是是" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

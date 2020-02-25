@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_60"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="@dimen/len_12"
+                android:text="@string/label_new_album"
+                android:textColor="@color/colorDesText"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="0.5dp"
+                android:layout_height="@dimen/len_16"
+                android:layout_marginStart="@dimen/len_12"
+                android:background="@color/colorDesText"
+                app:layout_constraintBottom_toBottomOf="@id/titleOne"
+                app:layout_constraintStart_toEndOf="@id/titleOne"
+                app:layout_constraintTop_toTopOf="@id/titleOne"
+             />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_12"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="@dimen/len_12"
+                android:text="@string/label_new_song"
+                android:textColor="@color/colorDesText"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line"
+                 />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rightTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_15"
+                android:background="@drawable/shape_base_title_right_txt_bg"
+                android:gravity="center"
+                android:text="@string/label_new_more_album"
+                android:textColor="@color/black_2d2d2d"
+                android:layout_marginBottom="@dimen/len_12"
+                android:textSize="@dimen/font_12"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="RelativeOverlap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/len_60"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/black_979797" />
+
+</merge>
+

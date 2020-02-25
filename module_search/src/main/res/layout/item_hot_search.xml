@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="onClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="hotData"
+                type="com.xw.lib_coremodel.model.bean.search.HotSearchData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_bg"
+            android:onClick="@{onClick}"
+            android:clickable="true"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10"
+            android:focusable="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/listNum"
+                android:layout_width="@dimen/len_20"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_10"
+                android:gravity="center"
+                android:textColor="@color/colorTheme"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:text="@{hotData.searchWord}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintBottom_toTopOf="@id/desTv"
+                app:layout_constraintStart_toEndOf="@id/listNum"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="爱是你我" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tagImg"
+                android:layout_width="@dimen/len_30"
+                android:layout_height="@dimen/len_16"
+                android:layout_marginStart="@dimen/len_4"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toBottomOf="@id/keywords"
+                app:layout_constraintStart_toEndOf="@id/keywords"
+                app:layout_constraintTop_toTopOf="@id/keywords"
+                tools:src="@drawable/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/desTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{hotData.content}"
+                android:textColor="@color/black_fifty_percent"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/keywords"
+                app:layout_constraintTop_toBottomOf="@id/keywords"
+                tools:text="爱是你我" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_15"
+                android:text="@{hotData.score}"
+                android:textColor="@color/black_forty_percent"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1243423423" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

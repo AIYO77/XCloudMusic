@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etWithDel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/color_343434"
+            android:textColorHint="@color/color_cbcbcb"
+            android:layout_marginEnd="@dimen/len_10"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:textSize="@dimen/font_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etDel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:hint="@string/label_input_phone_num" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/etDel"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_edit_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

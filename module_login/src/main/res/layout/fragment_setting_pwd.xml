@@ -1,0 +1,49 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/len_12"
+            android:paddingEnd="@dimen/len_12">
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/settingPwdEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_54"
+                android:background="@null"
+                android:hint="@string/label_setting_pwd"
+                android:inputType="textPassword"
+                android:textColor="@color/color_343434"
+                android:textColorHint="@color/color_cbcbcb"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/len_8"
+                android:background="@color/color_cbcbcb"
+                app:layout_constraintTop_toBottomOf="@id/settingPwdEt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_40"
+                android:layout_marginStart="@dimen/len_12"
+                android:layout_marginTop="@dimen/len_52"
+                android:layout_marginEnd="@dimen/len_12"
+                android:background="@drawable/btn_rund_bg_red_20"
+                android:gravity="center"
+                android:text="@string/label_next"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintTop_toBottomOf="@id/settingPwdEt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

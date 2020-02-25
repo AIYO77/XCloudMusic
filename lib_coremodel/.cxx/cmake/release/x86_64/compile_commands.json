@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/release/x86_64",
+  "command": "/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/xingwei/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dalgorithm_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o CMakeFiles/algorithm-lib.dir/algorithm-lib.cpp.o -c /Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/algorithm-lib.cpp",
+  "file": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/algorithm-lib.cpp"
+}
+]

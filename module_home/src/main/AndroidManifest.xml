@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.xmusic.module_home">
+
+    <application android:theme="@style/AppTheme">
+        <activity
+                android:name=".ui.activity.PlayListActivity"
+                android:theme="@style/AppTheme.TransStatusBar" />
+        <activity
+                android:name=".ui.activity.RankActivity"
+                android:theme="@style/AppTheme.TransStatusBar" />
+        <activity
+                android:name=".ui.activity.RecdDailyActivity"
+                android:theme="@style/AppTheme.TransStatusBar" />
+        <activity android:name=".debug.TestEnterActivity" />
+        <activity
+                android:name=".ui.activity.PlayListSquareActivity"
+                android:theme="@style/AppTheme.TransStatusBar" />
+        <activity
+                android:name=".ui.activity.tags.PlayListCatManagerAct"
+                android:theme="@style/AppTheme.TransStatusBar" />
+
+        <activity
+                android:name=".ui.activity.tags.PlayListCatDetailAct"
+                android:theme="@style/AppTheme.TransStatusBar" />
+    </application>
+
+</manifest>

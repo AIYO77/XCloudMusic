@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+
+androidExtensions {
+    experimental = true
+}
+
+
+dependencies {
+    api project(path: ':lib_coremodel')
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'com.github.masterxing:LaunchStarter:v1.0.0'
+
+
+}

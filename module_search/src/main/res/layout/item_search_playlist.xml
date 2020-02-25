@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="playlist"
+                type="com.xw.lib_coremodel.model.bean.home.PlayList" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/len_15"
+            android:paddingTop="@dimen/len_5"
+            android:paddingEnd="@dimen/len_15"
+            android:paddingBottom="@dimen/len_5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/plLogo"
+                android:layout_width="@dimen/len_50"
+                android:layout_height="@dimen/len_50"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{playlist.coverImgUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{4}"
+                tools:src="@drawable/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/plTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_7"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toTopOf="@id/plAr"
+                app:layout_constraintStart_toEndOf="@id/plLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="爱情公寓"
+                tools:textColor="@color/black_2a2a2a" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/plAr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_10"
+                app:layout_constraintBottom_toBottomOf="@id/plLogo"
+                app:layout_constraintStart_toStartOf="@id/plTitle"
+                app:layout_constraintTop_toBottomOf="@id/plTitle"
+                tools:text="xing 包含歌曲:"
+                tools:textColor="@color/black_979797" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

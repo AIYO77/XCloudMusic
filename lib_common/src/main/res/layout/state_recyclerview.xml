@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:visibility="visible" />
+
+    <com.xw.lib_opensource.recyclerview.MusicLoadingView
+            android:id="@+id/loadingView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_70" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/netError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_70"
+            android:gravity="center"
+            android:paddingTop="@dimen/len_14"
+            tools:visibility="visible"
+            android:paddingBottom="@dimen/len_14"
+            android:textColor="@color/black_979797"
+            android:text="@string/data_net_error_click_retry"
+            android:visibility="gone" />
+
+</merge>

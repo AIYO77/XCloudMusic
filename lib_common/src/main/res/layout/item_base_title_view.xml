@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        tools:background="@color/blue"
+        android:layout_height="@dimen/len_60">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/black_161616"
+            android:textSize="@dimen/font_16"
+            android:layout_marginBottom="@dimen/len_12"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="推荐歌单" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rightTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/len_12"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_base_title_right_txt_bg"
+            android:gravity="center"
+            android:textColor="@color/black_2d2d2d"
+            android:textSize="@dimen/font_12"
+            android:visibility="visible"
+            tools:ignore="RelativeOverlap"
+            tools:text="更多歌单" />
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient
+            android:centerColor="@color/btn_center_color"
+            android:endColor="@color/btn_end_color"
+            android:startColor="@color/btn_end_color" />
+
+    <size android:height="@dimen/len_32" />
+    <corners
+            android:bottomLeftRadius="@dimen/len_20"
+            android:bottomRightRadius="@dimen/len_20"
+            android:topLeftRadius="@dimen/len_20"
+            android:topRightRadius="@dimen/len_20" />
+
+    <padding
+            android:left="@dimen/len_14"
+            android:right="@dimen/len_14" />
+</shape>

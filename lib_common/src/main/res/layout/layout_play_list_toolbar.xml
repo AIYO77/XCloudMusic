@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarWithStatusBarSize">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/toolbarBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/play_list_header_height"
+                android:layout_marginBottom="155dp"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/icBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icBack"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/len_48"
+                android:layout_marginTop="@dimen/statusBarSize"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="@dimen/len_15"
+                android:paddingEnd="@dimen/len_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/statusBarSize"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_18"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/subTitle"
+                app:layout_constraintEnd_toStartOf="@id/leftTwo"
+                app:layout_constraintStart_toEndOf="@id/icBack"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="歌单" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/subTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_sixty_percent"
+                android:textSize="@dimen/font_10"
+                android:visibility="visible"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/leftTwo"
+                app:layout_constraintStart_toEndOf="@id/icBack"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="sadasdadasdasda" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/leftTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/len_48"
+                android:layout_marginTop="@dimen/statusBarSize"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="@dimen/len_20"
+                android:paddingEnd="@dimen/len_14"
+                app:layout_constraintEnd_toStartOf="@id/leftOne"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_search" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/leftOne"
+                android:layout_width="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_height="@dimen/len_48"
+                android:layout_marginTop="@dimen/statusBarSize"
+                android:layout_marginEnd="@dimen/len_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorWhite"
+                tools:srcCompat="@drawable/ic_more_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

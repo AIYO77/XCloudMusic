@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_home_video">视频</string>
+    <string name="title_home_user">我的</string>
+    <string name="title_home_found">发现</string>
+
+    <string name="title_rank">排行榜</string>
+    <string name="title_playlist">歌单</string>
+    <string name="title_playlist_square">歌单广场</string>
+    <string name="title_playlist_tags">歌单标签</string>
+    <string name="title_dj">电台</string>
+
+    <string name="title_comm_play_list">推荐歌单</string>
+    <string name="title_recd_daily">每日推荐</string>
+
+    <string name="title_permission">权限申请</string>
+
+    <string name="title_phone_login">手机号登陆</string>
+    <string name="title_email_login">邮箱登陆</string>
+    <string name="title_email_login_des">网易邮箱账号登陆</string>
+    <string name="title_forget_pwd">忘记密码</string>
+
+    <string name="title_register">注册</string>
+    <string name="title_phone_verify">手机号验证</string>
+    <string name="title_phone_register">手机号注册</string>
+
+    <string name="title_my_play_list_cat">我的歌单广场</string>
+</resources>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="playList"
+                type="com.xw.lib_coremodel.model.bean.home.PlayList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@color/colorPrimary">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playListLogo"
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:layout_marginStart="15dp"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/colorAccent" />
+
+        <View
+                android:layout_width="126dp"
+                android:layout_height="30dp"
+                android:background="@drawable/logo_top_mask"
+                app:layout_constraintStart_toStartOf="@id/playListLogo"
+                app:layout_constraintTop_toTopOf="@id/playListLogo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/playCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical|end"
+                android:paddingEnd="5dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_play_small"
+                app:layout_constraintEnd_toEndOf="@id/playListLogo"
+                app:layout_constraintTop_toTopOf="@id/playListLogo"
+                app:playCount="@{playList.playCount}"
+                tools:ignore="RtlSymmetry"
+                tools:text="12万" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/playListTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="15dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{playList.name}"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/playListLogo"
+                app:layout_constraintTop_toTopOf="@id/playListLogo"
+                tools:text="说唱榜说唱榜说唱榜说唱榜说唱榜说唱榜" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/creatorLogo"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{playList.creator.avatarUrl}"
+                app:layout_constraintStart_toStartOf="@id/playListTitle"
+                app:layout_constraintTop_toBottomOf="@id/playListTitle"
+                app:radius="@{13}"
+                tools:src="@drawable/ic_launcher_round" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/creatorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableEnd="@drawable/ic_more_16_16"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{playList.creator.nickname}"
+                android:textColor="@color/white_ninety_percent"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/creatorLogo"
+                app:layout_constraintStart_toEndOf="@id/creatorLogo"
+                app:layout_constraintTop_toTopOf="@id/creatorLogo"
+                tools:text="xw是大帅哥是大帅" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/white_eighty_percent"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@id/playListDes"
+                app:layout_constraintStart_toStartOf="@id/playListTitle"
+                app:updateTime="@{playList.updateTime}"
+                tools:text="最近更新:9月23号" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/playListDes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{playList.description}"
+                android:textColor="@color/white_eighty_percent"
+                android:textSize="13sp"
+                app:drawableEndCompat="@drawable/ic_more_16_16"
+                app:layout_constraintBottom_toBottomOf="@id/playListLogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/playListTitle"
+                tools:text="我要的音乐放肆听！网易云音乐重，我要的音乐放肆，" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/playListLogo">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white_seventy_percent"
+                    android:textSize="15sp"
+                    app:commentCount="@{playList.commentCount}"
+                    app:drawableTopCompat="@drawable/icon_comments"
+                    tools:text="100" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white_seventy_percent"
+                    android:textSize="15sp"
+                    app:commentCount="@{playList.shareCount}"
+                    app:drawableTopCompat="@drawable/ic_share"
+                    tools:text="100" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/download"
+                    android:textColor="@color/white_seventy_percent"
+                    android:textSize="15sp"
+                    app:drawableTopCompat="@drawable/ic_download" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/multi_select"
+                    android:textColor="@color/white_seventy_percent"
+                    android:textSize="15sp"
+                    app:drawableTopCompat="@drawable/ic_selected" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

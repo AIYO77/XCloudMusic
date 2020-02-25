@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_login"
+        app:startDestination="@id/login_mode_fragment">
+
+    <fragment
+            android:id="@+id/login_mode_fragment"
+            android:name="com.xmusic.module_login.ui.SelectLoginModeFragment"
+            tools:layout="@layout/fragment_select_login_mode">
+
+        <action
+                android:id="@+id/action_select_login_to_phone_login_fragment"
+                app:destination="@id/phone_login_fragment" />
+
+        <action
+                android:id="@+id/action_select_login_to_email_login_fragment"
+                app:destination="@id/email_login_fragment" />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/phone_login_fragment"
+            android:name="com.xmusic.module_login.ui.PhoneLoginFragment"
+            android:label="@string/title_phone_login"
+            tools:layout="@layout/fragment_phone_login">
+        <action
+                android:id="@+id/action_phone_login_to_enter_pwd_fragment"
+                app:destination="@id/enter_pwd_fragment" />
+        <action
+                android:id="@+id/action_phone_login_to_enter_code_fragment"
+                app:destination="@id/enter_code_fragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/email_login_fragment"
+            android:name="com.xmusic.module_login.ui.EmailLoginFragment"
+            android:label="@string/title_email_login_des"
+            tools:layout="@layout/fragment_email_login">
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/enter_pwd_fragment"
+            android:name="com.xmusic.module_login.ui.EnterPwdFragment"
+            android:label="@string/title_phone_login"
+            tools:layout="@layout/fragment_enter_pwd">
+
+        <action
+                android:id="@+id/action_enter_pwd_fragment_to_forget_pwd_fragment"
+                app:destination="@id/forget_pwd_fragment" />
+
+        <argument
+                android:name="phone"
+                app:argType="string" />
+
+        <argument
+                android:name="nikeName"
+                app:argType="string" />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/forget_pwd_fragment"
+            android:name="com.xmusic.module_login.ui.ForgetPwdFragment"
+            android:label="@string/title_forget_pwd"
+            tools:layout="@layout/fragment_forget_pwd">
+
+        <argument
+                android:name="phone"
+                app:argType="string" />
+        <argument
+                android:name="nikeName"
+                app:argType="string" />
+        <action
+                android:id="@+id/action_forget_pwd_fragment_to_enter_code_fragment"
+                app:destination="@id/enter_code_fragment" />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/enter_code_fragment"
+            android:name="com.xmusic.module_login.ui.VerifyCodeFragment"
+            android:label="@string/title_phone_verify"
+            tools:layout="@layout/fragment_verify_code">
+        <argument
+                android:name="phone"
+                app:argType="string" />
+        <argument
+                android:name="password"
+                app:argType="string"
+                app:nullable="true" />
+        <action
+                android:id="@+id/action_enter_code_fragment_to_setting_pwd_fragment"
+                app:destination="@id/setting_pwd_fragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/setting_pwd_fragment"
+            android:name="com.xmusic.module_login.ui.SettingPwdFragment"
+            android:label="@string/title_phone_register"
+            tools:layout="@layout/fragment_setting_pwd">
+
+        <action
+                android:id="@+id/enter_code_fragment_to_register_fragment"
+                app:destination="@id/register_fragment" />
+
+        <argument
+                android:name="phone"
+                app:argType="string" />
+        <argument
+                android:name="code"
+                app:argType="string" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/register_fragment"
+            android:name="com.xmusic.module_login.ui.RegisterFragment"
+            android:label="@string/title_register"
+            tools:layout="@layout/fragment_register">
+        <argument
+                android:name="phone"
+                app:argType="string" />
+        <argument
+                android:name="code"
+                app:argType="string" />
+        <argument
+                android:name="password"
+                app:argType="string"
+                app:nullable="false" />
+    </fragment>
+</navigation>

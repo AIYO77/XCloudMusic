@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="rank"
+                type="com.xw.lib_coremodel.model.bean.home.TopListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:onClick="@{clickListener}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rankImg"
+                android:layout_width="102dp"
+                android:layout_height="102dp"
+                android:background="@color/transparent"
+                app:imageFromUrl="@{rank.coverImgUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:radius="@{6}"
+                tools:background="@color/banner_blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rankDes"
+                android:layout_width="102dp"
+                android:layout_height="50dp"
+                android:background="@drawable/img_bottom_conner"
+                android:gravity="bottom"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="7dp"
+                android:text="@{rank.updateFrequency}"
+                android:textColor="@color/color_fffffd"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/rankImg"
+                tools:text="@string/app_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="11dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorDesText"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/rankImg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:num="@{1}"
+                app:tracks="@{rank.tracks}"
+                tools:text="1.张学友 - 一千个伤心的理由" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorDesText"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toTopOf="@id/three"
+                app:layout_constraintStart_toEndOf="@id/rankImg"
+                app:layout_constraintTop_toBottomOf="@id/one"
+                app:num="@{2}"
+                app:tracks="@{rank.tracks}"
+                tools:text="2.张学友 - 一千个伤心的理由" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/three"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="11dp"
+                android:gravity="start"
+                android:ellipsize="end"
+                android:textColor="@color/colorDesText"
+                android:textSize="14sp"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="@id/rankImg"
+                app:layout_constraintStart_toEndOf="@id/rankImg"
+                app:num="@{3}"
+                app:tracks="@{rank.tracks}"
+                tools:text="3.张学友 - 一千个伤心的理由" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

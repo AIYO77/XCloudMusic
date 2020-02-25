@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="onPlayAllClick"
+                type="android.view.View.OnClickListener" />
+
+        <variable
+                name="trackSize"
+                type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_50"
+            android:background="@drawable/lefttop_righttop_conner">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ripple_item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="@dimen/len_15"
+                android:paddingEnd="15dp"
+                android:gravity="center_vertical"
+                android:onClick="@{onPlayAllClick}"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_play_all" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/len_6"
+                    android:text="@string/label_all_play"
+                    android:textColor="@color/color_303030"
+                    android:textSize="@dimen/font_16" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_979797"
+                    android:textSize="@dimen/font_12"
+                    app:songCount="@{trackSize}"
+                    tools:text="(共20首)" />
+        </LinearLayout>
+
+
+        <com.xmusic.module_home.view.PlayListMoreChoices
+                android:id="@+id/moreChoices"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

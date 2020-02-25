@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="videoItemInfo"
+                type="com.xw.lib_coremodel.model.bean.video.VideoItemInfo" />
+
+        <variable
+                name="songClick"
+                type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:paddingStart="@dimen/len_16"
+            android:paddingEnd="@dimen/len_16"
+            android:paddingBottom="@dimen/len_10">
+
+        <com.minminaya.widget.GeneralRoundRelativeLayout
+                android:id="@+id/videoContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:corner_radius="@dimen/len_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <com.xmusic.module_video.ui.video.PlayerVideoView
+                    android:id="@+id/videoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_184" />
+        </com.minminaya.widget.GeneralRoundRelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/videoTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_14"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="2"
+                android:text="@{videoItemInfo.data.title}"
+                android:textColor="@color/color_2f2f2f"
+                android:textSize="@dimen/font_15"
+                app:layout_constraintEnd_toStartOf="@id/songLogo"
+                app:layout_constraintStart_toStartOf="@id/videoContainer"
+                app:layout_constraintTop_toBottomOf="@id/videoContainer"
+                tools:text="【皇后乐队】摇滚不觉的传奇神曲萨芬阿斯顿阿斯顿阿斯顿阿斯顿" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/songLogo"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{songClick}"
+                app:isGone="@{!videoItemInfo.data.haveSong()}"
+                app:layout_constraintBottom_toTopOf="@id/line"
+                app:layout_constraintEnd_toEndOf="@id/videoContainer"
+                app:layout_constraintTop_toBottomOf="@id/videoContainer"
+                app:loadAvatarUrl="@{videoItemInfo.data.songPic}"
+                app:loadHeight="@{34}"
+                app:loadWidth="@{34}"
+                tools:background="@color/tag_red" />
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/len_17"
+                android:background="@color/color_e4e4e4"
+                app:layout_constraintTop_toBottomOf="@id/videoTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/creatorAvatar"
+                android:layout_width="@dimen/len_30"
+                android:layout_height="@dimen/len_30"
+                android:layout_marginTop="@dimen/len_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                app:loadAvatarUrl="@{videoItemInfo.data.creator.avatarUrl}"
+                app:loadHeight="@{30}"
+                app:loadWidth="@{30}"
+                tools:background="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:layout_marginEnd="@dimen/len_10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{videoItemInfo.data.creator.nickname}"
+                android:textColor="@color/black_2d2d2d"
+                app:layout_constraintBottom_toBottomOf="@id/creatorAvatar"
+                app:layout_constraintEnd_toStartOf="@id/likeView"
+                app:layout_constraintStart_toEndOf="@id/creatorAvatar"
+                app:layout_constraintTop_toTopOf="@id/creatorAvatar"
+                tools:text="dasdasdasdasdasdasdasd" />
+
+        <com.xw.lib_common.view.LikeView
+                android:id="@+id/likeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/len_30"
+                app:layout_constraintBottom_toBottomOf="@id/creatorAvatar"
+                app:layout_constraintEnd_toStartOf="@id/commentsIv"
+                app:layout_constraintTop_toTopOf="@id/creatorAvatar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/commentsIv"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="@dimen/len_40"
+                android:src="@drawable/icon_comments"
+                android:tint="@color/color_606060"
+                app:layout_constraintBottom_toBottomOf="@id/creatorAvatar"
+                app:layout_constraintEnd_toStartOf="@id/moreImg"
+                app:layout_constraintTop_toTopOf="@id/creatorAvatar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moreImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/len_8"
+                android:src="@drawable/ic_more_vertical"
+                app:layout_constraintBottom_toBottomOf="@id/creatorAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/creatorAvatar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

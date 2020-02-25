@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="true"
+            android:clipToPadding="true">
+
+        <View
+                android:id="@+id/header_view_bg"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:background="@color/colorTheme"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ms.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_marginTop="26dp"
+                app:banner_default_image="@color/color_eeeeee"
+                app:indicator_height="7.3dp"
+                app:indicator_width="7.3dp"
+                app:layout_constraintBottom_toBottomOf="@id/header_view_bg"
+                app:layout_constraintTop_toTopOf="@id/header_view_bg" />
+
+        <LinearLayout
+                android:id="@+id/ll_but"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/banner">
+
+            <LinearLayout
+                    android:id="@+id/layout_recommended"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_calendar"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/colorTheme"
+                        android:textSize="12sp"
+                        tools:text="31" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/label_recommended_daily"
+                        android:textColor="@color/color_3e3e3e"
+                        android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/layout_fm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_private_fm" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/label_FM"
+                        android:textColor="@color/color_3e3e3e"
+                        android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/layout_rank"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_ranking_list" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_rank"
+                        android:textColor="@color/color_3e3e3e"
+                        android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/layout_play_list"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_playlist" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_playlist"
+                        android:textColor="@color/color_3e3e3e"
+                        android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/layout_Radio"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_radio" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_dj"
+                        android:textColor="@color/color_3e3e3e"
+                        android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/color_f2f2f2"
+                app:layout_constraintTop_toBottomOf="@id/ll_but" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

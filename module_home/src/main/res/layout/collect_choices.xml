@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_conner"
+        android:gravity="center"
+        android:clickable="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_13"
+        android:visibility="visible"
+        tools:text="+ 收藏(12334)"
+        android:focusable="true" />

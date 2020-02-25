@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="label_recommended_daily">每日推荐</string>
+    <string name="label_FM">私人FM</string>
+
+    <string name="label_all_play">全部播放</string>
+
+    <string name="label_collect">收藏</string>
+    <string name="label_add_collect">+ 收藏 %1$s</string>
+
+    <string name="label_tag_vip">VIP</string>
+    <string name="label_tag_dj">独家</string>
+    <string name="label_tag_sq">SQ</string>
+    <string name="label_next">下一步</string>
+    <string name="label_multiple">多选</string>
+
+    <string name="label_confirm">确定</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_go_setting">去设置</string>
+
+    <string name="label_play_list_market">歌单广场</string>
+    <string name="label_new_album">新碟</string>
+    <string name="label_new_song">新歌</string>
+    <string name="label_new_more_album">更多新碟</string>
+    <string name="label_new_song_recommend">新歌推荐</string>
+
+    <string name="label_permission_write_external_storage">存储空间</string>
+    <string name="label_write_external_storage_des">我们需要您允许我们读写你的存储卡，以方便我们临时保存一些数据</string>
+
+    <string name="label_permission_read_external_storage">读外部存储</string>
+    <string name="label_read_external_storage_des">我们需要读取外部存储卡信息来确保数据的有效性</string>
+
+    <string name="label_ple_open_permission_on_window">请在打开的窗口的权限中开启%s权限，以正常使用本应用</string>
+
+    <string name="label_collect_all">收藏全部</string>
+    <string name="label_queue_is_empty">播放队列为空</string>
+    <string name="label_random_play">随机播放</string>
+    <string name="label_random_play_s">随机播放(%d)</string>
+    <string name="label_loop_play">列表循环</string>
+    <string name="label_loop_play_s">列表循环(%d)</string>
+    <string name="label_play_one">单曲循环</string>
+    <string name="label_play_one_s">单曲循环(%d)</string>
+
+    <string name="label_sub_count">%s人收藏</string>
+
+    <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%3$02d</xliff:g></string>
+    <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%2$02d:%3$02d</xliff:g></string>
+
+    <string name="label_phone_login_des">未注册手机号登陆后将自动创建账号</string>
+    <string name="label_input_phone_num">输入手机号码</string>
+    <string name="label_input_pwd">输入密码</string>
+    <string name="label_please_input_pwd">请输入密码</string>
+    <string name="label_please_input_email">请输入邮箱账号</string>
+    <string name="label_please_input_six_pwd">请输入六位或以上的密码</string>
+    <string name="label_forget_pwd">忘记密码?</string>
+    <string name="label_setting_pwd">设置登陆密码，不少于六位</string>
+    <string name="label_verify_send_to">验证码已发送至</string>
+    <string name="label_captcha_replay">重新发送</string>
+    <string name="label_input_nike_name_tip">你希望大家怎么称呼你呢?</string>
+    <string name="label_input_nike_name">请输入昵称</string>
+    <string name="label_register">开启音乐</string>
+
+
+    <string name="label_confirm_clear_play_queue">确定要清空播放列表？</string>
+    <string name="label_clear">清空</string>
+
+    <string name="label_long_click_edit">(长按可编辑)</string>
+    <string name="label_drag_edit">(拖动可排序)</string>
+    <string name="label_edit">编辑</string>
+    <string name="label_suc">完成</string>
+    <string name="label_cant_del">不能再删除了哦</string>
+    <string name="label_history">历史记录</string>
+    <string name="label_confirm_clear_history">确定清空历史记录？</string>
+    <string name="label_hot_search_rank">热搜榜</string>
+
+    <string name="label_settle_in">已入驻</string>
+    <string name="label_focused">已关注</string>
+    <string name="label_focus">关注</string>
+</resources>

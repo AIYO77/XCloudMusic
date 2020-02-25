@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_da2d1f">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/len_70"
+            android:layout_height="@dimen/len_70"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/len_32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginPhone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_41"
+            android:layout_marginStart="@dimen/len_55"
+            android:layout_marginEnd="@dimen/len_55"
+            android:layout_marginBottom="@dimen/len_20"
+            android:background="@drawable/btn_rund_bg_white_20"
+            android:gravity="center"
+            android:text="@string/title_phone_login"
+            android:textColor="@color/color_da2d1f"
+            android:textSize="@dimen/font_15"
+            app:layout_constraintBottom_toTopOf="@id/loginEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_41"
+            android:layout_marginStart="@dimen/len_55"
+            android:layout_marginEnd="@dimen/len_55"
+            android:layout_marginBottom="@dimen/len_64"
+            android:background="@drawable/btn_rund_bg_white_20"
+            android:gravity="center"
+            android:text="@string/title_email_login"
+            android:textColor="@color/color_da2d1f"
+            android:textSize="@dimen/font_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

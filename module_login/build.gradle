@@ -1,0 +1,70 @@
+if (isModule.toBoolean() || moduleNeedLogin.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        if (!isModule.toBoolean()&&!moduleNeedLogin.toBoolean()) {
+            applicationId "com.xw.music_login"
+        }
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        consumerProguardFiles 'consumer-rules.pro'
+        if (!isModule.toBoolean() && !moduleNeedLogin.toBoolean()) {
+            multiDexEnabled true
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()|| moduleNeedLogin.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+
+    api project(path: ':lib_common')
+    //ARouter
+    kapt "com.alibaba:arouter-compiler:$arouterCompiler"
+}

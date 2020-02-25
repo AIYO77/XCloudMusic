@@ -1,0 +1,1 @@
+include ':app', ':lib_common', ':lib_opensource', ':lib_coremodel', ':module_login', ':module_video', ':module_home', ':lib_lang', ':module_search'
