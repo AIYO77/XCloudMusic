@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_200"
+        android:background="@color/color_ebebeb">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/loginTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/len_60"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:textColor="@color/color_5a5a5a"
+            android:textSize="@dimen/font_15"
+            tools:text="登陆Music\n手机电脑多端同步，尽享海量高品质音乐" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/loginTv"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@drawable/login_btn_bg"
+            android:gravity="center"
+            android:layout_marginTop="112dp"
+            android:text="@string/label_go_login"
+            android:textColor="@color/color_575757"
+            android:textSize="@dimen/font_15"
+            android:focusable="true" />
+</FrameLayout>

@@ -29,7 +29,9 @@ class SearchSingersAdapter : BaseSearchAdapter<ArtistInfo>(DIFF) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as SearchSingerViewHolder) {
-            bind(getItem(position), keywords)
+            getItem(position)?.let {
+                bind(it, keywords)
+            }
         }
     }
 

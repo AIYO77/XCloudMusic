@@ -1,5 +1,6 @@
 package com.xmusic.module_search.ui.fragment
 
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,21 +18,15 @@ import com.xw.lib_coremodel.utils.DataHolder
  */
 class SearchSingersFragment : SearchResultVpFragment<ArtistInfo>() {
 
-    override val adapter: BaseSearchAdapter<ArtistInfo>
-        get() = SearchSingersAdapter()
-
-    override fun startObserve() {
-        super.startObserve()
-        viewModel.posts.observe(this, Observer {
-            adapter.keywords = viewModel.getKeywords()
-            adapter.submitList(it)
-        })
-    }
+    override val adapter: BaseSearchAdapter<ArtistInfo> = SearchSingersAdapter()
 
     companion object {
         fun newInstance(searchType: SearchType): SearchSingersFragment {
-            DataHolder.getInstance().setData(SEARCH_TYPE, searchType)
-            return SearchSingersFragment()
+            return SearchSingersFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(SEARCH_TYPE,searchType)
+                }
+            }
         }
     }
 }

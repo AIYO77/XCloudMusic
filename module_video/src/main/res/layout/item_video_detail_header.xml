@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="videoInfo"
+                type="com.xw.lib_coremodel.model.bean.video.VideoItemData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/videoTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_16"
+                android:layout_marginEnd="@dimen/len_16"
+                android:lineSpacingExtra="@dimen/len_4"
+                android:maxLines="2"
+                android:text="@{videoInfo.title}"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_15"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="是的方式暗示法爱上暗示法暗示法暗示法暗示法阿斯顿阿斯顿" />
+
+        <com.xw.lib_common.view.WarpLinearLayout
+                android:id="@+id/tagsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_16"
+                android:layout_marginTop="@dimen/len_16"
+                android:layout_marginEnd="@dimen/len_16"
+                app:gravite="left"
+                app:horizontal_Space="10dp"
+                app:isFull="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/videoTitle"
+                app:vertical_Space="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pushTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/color_606060"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintStart_toStartOf="@id/videoTitle"
+                app:layout_constraintTop_toBottomOf="@id/tagsLayout"
+                tools:text="2019-2-21 发布" />
+
+        <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_20"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/videoTitle"
+                app:layout_constraintStart_toStartOf="@id/videoTitle"
+                app:layout_constraintTop_toBottomOf="@id/pushTime">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_36"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_like"
+                    android:gravity="center"
+                    android:textColor="@color/black_979797"
+                    tools:text="261841" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_36"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_like"
+                    android:gravity="center"
+                    android:textColor="@color/black_979797"
+                    tools:text="261841" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_36"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_like"
+                    android:gravity="center"
+                    android:textColor="@color/black_979797"
+                    tools:text="261841" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/len_36"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_like"
+                    android:gravity="center"
+                    android:textColor="@color/black_979797"
+                    tools:text="261841" />
+
+        </LinearLayout>
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/len_15"
+                android:background="@color/color_e4e4e4"
+                app:layout_constraintTop_toBottomOf="@id/layout" />
+
+        <LinearLayout
+                android:id="@+id/creatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_50"
+                android:background="@drawable/ripple_item_bg"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/len_16"
+                android:paddingEnd="@dimen/len_16"
+                android:orientation="horizontal"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                android:focusable="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/avatarIv"
+                    android:layout_width="@dimen/len_28"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/len_28"
+                    app:loadAvatarUrl="@{videoInfo.creator.avatarUrl}"
+                    app:loadHeight="@{28}"
+                    app:loadWidth="@{28}"
+                    tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/len_10"
+                    android:textColor="@color/black_2b2b2b"
+                    android:textSize="@dimen/font_13"
+                    tools:text="@string/app_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:text="+ 关注"
+                    android:gravity="center"
+                    app:isGone="@{videoInfo.praised}"
+                    android:textSize="@dimen/font_13"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/btn_conner"
+                    android:layout_height="@dimen/len_24"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/len_20"
+                    android:src="@drawable/ic_more"
+                    app:isGone="@{!videoInfo.praised}"
+                    android:tint="@color/black_979797"
+                    android:visibility="gone"
+                    android:layout_height="@dimen/len_20"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/creatorLayout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/color_f5f5f5"
+                android:layout_height="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -89,9 +89,10 @@ class StateRecycleView @JvmOverloads constructor(
     private fun check() {
         if (recycleView.adapter != null && recycleView.adapter!!.itemCount > 0) {
             loadingView.stopLoading()
+            recycleView.show()
             loadingView.gone()
             netErrorView.gone()
-            recycleView.show()
+
         }
     }
 

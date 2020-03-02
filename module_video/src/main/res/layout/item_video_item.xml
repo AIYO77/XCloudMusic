@@ -27,8 +27,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/len_10"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:corner_radius="@dimen/len_8"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -137,5 +137,21 @@
                 app:layout_constraintBottom_toBottomOf="@id/creatorAvatar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/creatorAvatar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/videoTag"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/len_20"
+                android:layout_marginTop="@dimen/len_8"
+                android:layout_marginEnd="@dimen/len_8"
+                android:background="@drawable/video_tag_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_10"
+                app:layout_constraintEnd_toEndOf="@id/videoContainer"
+                app:layout_constraintTop_toTopOf="@id/videoContainer"
+                tools:text="#周杰伦#" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -13,6 +13,7 @@ import com.xw.lib_common.ext.formatting
 import com.xw.lib_common.ext.gone
 import com.xw.lib_common.ext.makeTimeString
 import com.xw.lib_common.ext.show
+import com.xw.lib_common.service.MusicPlayer
 import com.xw.lib_coremodel.model.bean.video.VideoItemData
 import kotlinx.android.synthetic.main.layout_video_view.view.*
 
@@ -39,6 +40,9 @@ class PlayerVideoView : StandardGSYVideoPlayer {
     override fun prepareVideo() {
         super.prepareVideo()
         gonePlayCount()
+        if (MusicPlayer.isPlaying()) {
+            MusicPlayer.stop()
+        }
     }
 
     override fun getLayoutId(): Int {

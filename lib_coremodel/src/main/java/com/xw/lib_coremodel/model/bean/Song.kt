@@ -16,9 +16,9 @@ import kotlinx.android.parcel.Parcelize
 data class Song(
     val name: String = "",
     val id: Long = -1,
-    val ar: List<ArtistInfo>,
-    val al: AlbumItemInfo,
-    val alia: List<String>,
+    val ar: List<ArtistInfo>?,
+    val al: AlbumItemInfo?,
+    val alia: List<String>?,
     val publishTime: String = "",
     val mv: Long = 0,
     val privilege: Privilege? = null

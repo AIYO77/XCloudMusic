@@ -152,6 +152,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : StateListenerFragment() {
      * 加载完成的状态
      */
     protected fun showContentView() {
+
     }
 
     /**

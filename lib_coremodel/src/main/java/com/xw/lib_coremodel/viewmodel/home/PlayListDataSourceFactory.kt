@@ -14,13 +14,12 @@ import java.util.concurrent.Executor
  *
  * Desc:
  */
-class PlayListDataSourceFactory(private val coroutineScope: CoroutineScope,
-                                private val retryExecutor: Executor,
+class PlayListDataSourceFactory(private val retryExecutor: Executor,
                                 private val playListCat: PlayListCat) :
     DataSource.Factory<String, PlayList>() {
     val sourceLiveData = MutableLiveData<PlayListDataSource>()
     override fun create(): DataSource<String, PlayList> {
-        val source = PlayListDataSource(coroutineScope,retryExecutor,playListCat)
+        val source = PlayListDataSource(retryExecutor,playListCat)
         sourceLiveData.postValue(source)
         return source
     }

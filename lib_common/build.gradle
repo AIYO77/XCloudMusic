@@ -45,7 +45,7 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation 'com.github.masterxing:LaunchStarter:v1.0.0'
+    implementation 'com.github.masterxing:LaunchStarter:v1.0.3'
 
 
 }

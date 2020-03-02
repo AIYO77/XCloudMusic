@@ -15,7 +15,7 @@ import com.xw.lib_common.base.view.fragment.BaseModelFragment
 import com.xw.lib_common.ext.show
 import com.xw.lib_coremodel.model.bean.video.VideoType
 import com.xw.lib_coremodel.utils.InjectorUtils
-import com.xw.lib_coremodel.viewmodel.video.VideoViewModel
+import com.xw.lib_coremodel.viewmodel.video.VideoListViewModel
 import kotlinx.android.synthetic.main.fragment_video.*
 import java.util.concurrent.Executors
 
@@ -25,12 +25,12 @@ import java.util.concurrent.Executors
  *
  * Desc:
  */
-class HomeVideoFragment : BaseModelFragment<FragmentVideoBinding, VideoViewModel>() {
+class HomeVideoFragment : BaseModelFragment<FragmentVideoBinding, VideoListViewModel>() {
 
     private val videoTypes = mutableListOf<VideoType>()
     private val NETWORK_IO = Executors.newFixedThreadPool(BaseApplication.CORE_POOL_SIZE)
 
-    override val viewModel: VideoViewModel by viewModels {
+    override val viewModel: VideoListViewModel by viewModels {
         InjectorUtils.provideVideoModelFactory(requireContext(), NETWORK_IO)
     }
 
@@ -95,7 +95,10 @@ class HomeVideoFragment : BaseModelFragment<FragmentVideoBinding, VideoViewModel
     }
 
     fun onBackPressed(): Boolean {
-        return GSYVideoManager.backFromWindowFull(requireActivity())
+        if (GSYVideoManager.instance().isPlaying) {
+            return GSYVideoManager.backFromWindowFull(requireActivity())
+        }
+        return false
     }
 
 

@@ -1,5 +1,6 @@
 package com.xmusic.module_search.ui.fragment
 
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.xmusic.module_search.adapter.BaseSearchAdapter
 import com.xmusic.module_search.adapter.SearchVideosAdapter
@@ -15,21 +16,15 @@ import com.xw.lib_coremodel.utils.DataHolder
  */
 class SearchVideosFragment : SearchResultVpFragment<SearchVideoItemInfo>() {
 
-    override val adapter: BaseSearchAdapter<SearchVideoItemInfo>
-        get() = SearchVideosAdapter()
-
-    override fun startObserve() {
-        super.startObserve()
-        viewModel.posts.observe(this, Observer {
-            adapter.keywords = viewModel.getKeywords()
-            adapter.submitList(it)
-        })
-    }
+    override val adapter: BaseSearchAdapter<SearchVideoItemInfo> = SearchVideosAdapter()
 
     companion object {
         fun newInstance(searchType: SearchType): SearchVideosFragment {
-            DataHolder.getInstance().setData(SEARCH_TYPE, searchType)
-            return SearchVideosFragment()
+            return SearchVideosFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(SEARCH_TYPE, searchType)
+                }
+            }
         }
     }
 }

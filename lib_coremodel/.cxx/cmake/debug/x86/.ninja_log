@@ -1,3 +1,4 @@
 # ninja log v5
-1	1151	1582549761	CMakeFiles/algorithm-lib.dir/algorithm-lib.cpp.o	45686142628b1d7
-1152	1214	1582549761	/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/obj/x86/libalgorithm-lib.so	669f1026e9271d76
+0	6	0	clean	2446d53d803b37ed
+0	961	1583120365	CMakeFiles/algorithm-lib.dir/algorithm-lib.cpp.o	45686142628b1d7
+963	1038	1583120365	/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/obj/x86/libalgorithm-lib.so	669f1026e9271d76

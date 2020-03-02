@@ -23,13 +23,17 @@ class SearchSingerViewHolder(private val binding: ItemSearchSingerBinding) :
     fun bind(artistInfo: ArtistInfo, keywords: String) {
         with(binding) {
             singer = artistInfo
-            singerName.text =
+            singerName.text = if (artistInfo.alias.isNullOrEmpty().not()){
                 getKeywordsSpanner(artistInfo.name, keywords, blackColor, keywordsColor, 13).append(
                     getKeywordsSpanner(
                         "(${artistInfo.alias.reduce { acc, s -> "$acc/$s" }})", keywords, grayColor,
                         keywordsColor, 13
                     )
                 )
+            }else{
+                getKeywordsSpanner(artistInfo.name, keywords, blackColor, keywordsColor, 13)
+            }
+
             GlideUtils.loadImageCircleCrop(
                 binding.root.context, singerLogo, artistInfo.picUrl.specifyLoad(50, 50),
                 R.drawable.icon_user_circle

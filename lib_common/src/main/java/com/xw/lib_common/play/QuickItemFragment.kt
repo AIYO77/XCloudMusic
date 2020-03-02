@@ -103,6 +103,14 @@ class QuickItemFragment : StateListenerFragment() {
     override fun updateTrackInfo() {
         super.updateTrackInfo()
         updateProgress()
+        if (context != null) {
+            GlideUtils.loadImageCircleCrop(
+                context!!,
+                songLogo!!,
+                simpleTrackInfo.logo,
+                R.drawable.placeholder_disk_play_100
+            )
+        }
     }
 
     override fun onResume() {
@@ -126,7 +134,7 @@ class QuickItemFragment : StateListenerFragment() {
             upLrcTxt(it)
         })
         GlideUtils.loadImageCircleCrop(
-            context!!,
+            requireContext(),
             songLogo!!,
             simpleTrackInfo.logo,
             R.drawable.placeholder_disk_play_100

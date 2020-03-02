@@ -11,13 +11,12 @@ import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.xmusic.module_video.R
 import com.xmusic.module_video.databinding.FragmentListVideoBinding
 import com.xmusic.module_video.ui.adapter.VideoListAdapter
-import com.xmusic.module_video.ui.adapter.viewholder.VideoItemViewHolder
 import com.xw.lib_common.base.BaseApplication
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
 import com.xw.lib_common.ext.onScrolled
 import com.xw.lib_coremodel.model.bean.NetworkState
 import com.xw.lib_coremodel.utils.InjectorUtils
-import com.xw.lib_coremodel.viewmodel.video.VideoViewModel
+import com.xw.lib_coremodel.viewmodel.video.VideoListViewModel
 import kotlinx.android.synthetic.main.fragment_list_video.*
 import java.util.concurrent.Executors
 
@@ -27,7 +26,7 @@ import java.util.concurrent.Executors
  *
  * Desc:
  */
-class VideoListFragment : BaseModelFragment<FragmentListVideoBinding, VideoViewModel>() {
+class VideoListFragment : BaseModelFragment<FragmentListVideoBinding, VideoListViewModel>() {
 
     private var videoListAdapter: VideoListAdapter? = null
     private val NETWORK_IO = Executors.newFixedThreadPool(BaseApplication.CORE_POOL_SIZE)
@@ -36,7 +35,7 @@ class VideoListFragment : BaseModelFragment<FragmentListVideoBinding, VideoViewM
 
     private var mNeedPause = true
 
-    override val viewModel: VideoViewModel by viewModels {
+    override val viewModel: VideoListViewModel by viewModels {
         InjectorUtils.provideVideoModelFactory(requireContext(), NETWORK_IO)
     }
 
@@ -120,7 +119,6 @@ class VideoListFragment : BaseModelFragment<FragmentListVideoBinding, VideoViewM
     override fun onResume() {
         super.onResume()
         val playPosition = GSYVideoManager.instance().playPosition
-        Logger.e("onResume $mNeedPause position=${GSYVideoManager.instance().playPosition}")
         if (mNeedPause.not()) {
             videoListAdapter?.currentList?.get(playPosition)?.change()
             GSYVideoManager.releaseAllVideos()

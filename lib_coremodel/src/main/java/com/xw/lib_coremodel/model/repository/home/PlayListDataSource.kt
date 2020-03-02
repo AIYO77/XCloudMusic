@@ -8,7 +8,10 @@ import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.NetworkState
 import com.xw.lib_coremodel.model.bean.home.PlayList
 import com.xw.lib_coremodel.model.bean.home.PlayListCat
+import com.xw.lib_coremodel.model.bean.home.TopPlayListsRespose
 import kotlinx.coroutines.*
+import retrofit2.Call
+import retrofit2.Response
 import java.util.concurrent.Executor
 
 /**
@@ -18,7 +21,6 @@ import java.util.concurrent.Executor
  * Desc:
  */
 class PlayListDataSource(
-    private val coroutineScope: CoroutineScope,
     private val retryExecutor: Executor,
     private val playListCat: PlayListCat
 ) : ItemKeyedDataSource<String, PlayList>() {
@@ -47,74 +49,103 @@ class PlayListDataSource(
         initialLoad.postValue(NetworkState.LOADING)
         mOffset = 1
 
-        coroutineScope.launch {
-            val playListsRespose = when (playListCat.name) {
-                "精品" -> {
-                    withContext(Dispatchers.IO) {
-                        MusicRetrofitClient.service.getPlaylistHighquality(
-                            limit = params.requestedLoadSize
-                        )
-                    }
-                }
-                else -> {
-                    withContext(Dispatchers.IO) {
-                        MusicRetrofitClient.service.getTopPlaylist(
-                            cat = playListCat.name,
-                            limit = params.requestedLoadSize
-                        )
-                    }
-                }
+        val playListsRespose = when (playListCat.name) {
+            "精品" -> {
+                MusicRetrofitClient.service.getPlaylistHighquality(limit = params.requestedLoadSize)
+                    .execute()
             }
-
-            executeResponse(playListsRespose, {
-                retry = null
-                networkState.postValue(NetworkState.LOADED)
-                initialLoad.postValue(NetworkState.LOADED)
-                callback.onResult(playListsRespose.playlists)
-            }, {
-                retry = {
-                    loadInitial(params, callback)
-                }
-                val error = NetworkState.error(playListsRespose.getResponseMsg())
-                networkState.postValue(error)
-                initialLoad.postValue(error)
-            })
+            else -> {
+                MusicRetrofitClient.service.getTopPlaylist(
+                    cat = playListCat.name,
+                    limit = params.requestedLoadSize
+                ).execute()
+            }
+        }
+        if (playListsRespose.isSuccessful) {
+            retry = null
+            networkState.postValue(NetworkState.LOADED)
+            initialLoad.postValue(NetworkState.LOADED)
+            callback.onResult(playListsRespose.body()?.playlists ?: emptyList())
+        } else {
+            retry = {
+                loadInitial(params, callback)
+            }
+            val error = NetworkState.error(playListsRespose.body()?.getResponseMsg())
+            networkState.postValue(error)
+            initialLoad.postValue(error)
         }
     }
 
     override fun loadAfter(params: LoadParams<String>, callback: LoadCallback<PlayList>) {
         networkState.postValue(NetworkState.LOADING)
-        coroutineScope.launch {
-            val playListsRespose = when (playListCat.name) {
-                "精品" -> {
-                    withContext(Dispatchers.IO) {
-                        MusicRetrofitClient.service.getPlaylistHighquality(
-                            limit = params.requestedLoadSize,
-                            before = params.key
-                        )
+        when (playListCat.name) {
+            "精品" -> {
+                MusicRetrofitClient.service.getPlaylistHighquality(
+                    limit = params.requestedLoadSize,
+                    before = params.key
+                ).enqueue(object : retrofit2.Callback<TopPlayListsRespose> {
+                    override fun onFailure(call: Call<TopPlayListsRespose>, t: Throwable) {
+                        retry = {
+                            loadAfter(params, callback)
+                        }
+                        networkState.postValue(NetworkState.error(t.message))
                     }
-                }
-                else -> {
-                    withContext(Dispatchers.IO) {
-                        MusicRetrofitClient.service.getTopPlaylist(
-                            cat = playListCat.name,
-                            limit = params.requestedLoadSize,
-                            offset = params.requestedLoadSize * mOffset++
-                        )
+
+                    override fun onResponse(
+                        call: Call<TopPlayListsRespose>,
+                        response: Response<TopPlayListsRespose>
+                    ) {
+                        dealResponse(response,params, callback)
                     }
-                }
+
+                })
+            }
+            else -> {
+                MusicRetrofitClient.service.getTopPlaylist(
+                    cat = playListCat.name,
+                    limit = params.requestedLoadSize,
+                    offset = params.requestedLoadSize * mOffset++
+                ).enqueue(object : retrofit2.Callback<TopPlayListsRespose> {
+                    override fun onFailure(call: Call<TopPlayListsRespose>, t: Throwable) {
+                        retry = {
+                            loadAfter(params, callback)
+                        }
+                        networkState.postValue(NetworkState.error(t.message))
+                    }
+
+                    override fun onResponse(
+                        call: Call<TopPlayListsRespose>,
+                        response: Response<TopPlayListsRespose>
+                    ) {
+                        dealResponse(response,params, callback)
+                    }
+                })
+            }
+        }
+    }
+
+    private fun dealResponse(
+        response: Response<TopPlayListsRespose>,
+        params: LoadParams<String>,
+        callback: LoadCallback<PlayList>
+    ) {
+        if (response.isSuccessful) {
+            val body = response.body()
+            val success = body?.isSuccess() ?: false
+            if (success) {
+                val items = response.body()?.playlists ?: emptyList()
+                retry = null
+                callback.onResult(items)
+                networkState.postValue(NetworkState.LOADED)
             }
 
-            executeResponse(playListsRespose, {
-                retry = null
-                callback.onResult(playListsRespose.playlists)
-                networkState.postValue(NetworkState.LOADED)
-            }, {
-                retry = {
-                    loadAfter(params, callback)
-                }
-                networkState.postValue(NetworkState.error(playListsRespose.getResponseMsg()))
-            })
+        } else {
+            retry = {
+                loadAfter(params, callback)
+            }
+            networkState.postValue(
+                NetworkState.error("error code: ${response.code()}")
+            )
         }
     }
 

@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
  *
  * Desc:
  */
-class VideoViewModel(private val videoRepository: VideoRepository) : BaseViewModel() {
+class VideoListViewModel(private val videoRepository: VideoRepository) : BaseVideoViewModel(videoRepository) {
     val videoTypes = MutableLiveData<List<VideoType>>()
 
     fun getVideoType() {

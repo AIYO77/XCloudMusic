@@ -49,25 +49,31 @@ class SearchSongViewHolder(private val binding: ItemSearchSongBinding) :
                 aliaBuilder = getAliaSpanner(song.alia, keywords, 15, R.color.black_999999)
             }
 
-            val reduce = song.ar.map { it.name }.reduce { acc, s -> "$acc/$s" }
-            val arSpanner =
-                if (reduce.contentEquals(keywords)) {
-                    getKeywordsSpanner(reduce, keywords, grayColor, keywordsColor, 13)
+            val arSpanner = song.ar?.map { it.name }?.reduce { acc, s -> "$acc/$s" }?.let {
+                if (it.contentEquals(keywords)) {
+                    getKeywordsSpanner(it, keywords, grayColor, keywordsColor, 13)
                 } else {
-                    SpannableStringBuilder().color(getColor(R.color.black_979797)) { append(reduce) }
+                    SpannableStringBuilder().color(getColor(R.color.black_979797)) { append(it) }
                 }
-            val alSpanner =
-                if (song.al.name.contentEquals(keywords)) {
-                    getKeywordsSpanner(song.al.name, keywords, lightGrayColor, keywordsColor, 13)
+            }
+            val alSpanner = song.al?.name?.let {
+                if (it.contentEquals(keywords)) {
+                    getKeywordsSpanner(it, keywords, lightGrayColor, keywordsColor, 13)
                 } else {
                     SpannableStringBuilder().color(getColor(getColor(R.color.black_979797))) {
                         append(
-                            song.al.name
+                            it
                         )
                     }
                 }
-            name.text = nameBuilder.append(aliaBuilder)
-            arAndAl.text = arSpanner.append("-").append(alSpanner)
+            }
+            if (aliaBuilder == null) {
+                name.text = nameBuilder
+            } else {
+                name.text = nameBuilder.append(aliaBuilder)
+            }
+
+            arAndAl.text = arSpanner?.append("-")?.append(alSpanner)
             if (song.alia.isNullOrEmpty().not()) {
                 alia.show()
                 alia.text = getAliaSpanner(song.alia, keywords, 13, R.color.black_979797)
@@ -79,12 +85,12 @@ class SearchSongViewHolder(private val binding: ItemSearchSongBinding) :
     }
 
     private fun getAliaSpanner(
-        alia: List<String>,
+        alia: List<String>?,
         keywords: String,
         textSize: Int,
         @ColorRes defaultColor: Int
     ): SpannableStringBuilder {
-        val mAlia = "(${alia.reduce { acc, s -> "$acc/$s" }})"
+        val mAlia = "(${alia?.reduce { acc, s -> "$acc/$s" }})"
         return if (mAlia.contentEquals(keywords)) {
 
             getKeywordsSpanner(

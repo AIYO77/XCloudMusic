@@ -1,9 +1,9 @@
 package com.xw.lib_common.task
 
+import com.masterxing.launchstarter.task.Task
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
-import com.xing.launchstarter.task.Task
 
 /**
  * @author: xingwei

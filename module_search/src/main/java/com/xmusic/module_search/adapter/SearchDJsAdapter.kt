@@ -30,7 +30,9 @@ class SearchDJsAdapter : BaseSearchAdapter<DjRadioInfo>(DIFF) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as SearchDJViewHolder) {
-            bind(getItem(position), keywords)
+            getItem(position)?.let {
+                bind(it, keywords)
+            }
         }
     }
 

@@ -20,7 +20,7 @@ import retrofit2.http.*
  */
 interface MusicService {
     companion object {
-        const val BASE_URL = "http://192.168.1.2:3000"
+        const val BASE_URL = "http://192.168.1.14:3000"
 //        const val BASE_URL = "http://172.20.10.6:3000"
 //        const val BASE_URL = "http://192.168.16.15:3000"
 //        const val BASE_URL = "http://194.168.1.102:3000"
@@ -126,23 +126,23 @@ interface MusicService {
      * limit 数量
      */
     @GET("/top/playlist")
-    suspend fun getTopPlaylist(
+    fun getTopPlaylist(
         @Query("order") order: String = "hot",
         @Query("cat") cat: String,
         @Query("limit") limit: Int,
         @Query("offset") offset: Int = -1
-    ): TopPlayListsRespose
+    ): Call<TopPlayListsRespose>
 
     /**
      * 精品歌单
      * cat  比如 " 华语 "、" 古风 " 、" 欧美 "、" 流行 ", 默认为 "全部"
      */
     @GET("/top/playlist/highquality")
-    suspend fun getPlaylistHighquality(
+    fun getPlaylistHighquality(
         @Query("cat") cat: String = "全部",
         @Query("limit") limit: Int,
         @Query("before") before: String = ""
-    ): TopPlayListsRespose
+    ): Call<TopPlayListsRespose>
 
     /**
      * 默认搜索关键词

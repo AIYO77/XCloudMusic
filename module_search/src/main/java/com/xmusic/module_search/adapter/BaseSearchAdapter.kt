@@ -1,7 +1,7 @@
 package com.xmusic.module_search.adapter
 
+import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Desc:
  */
 abstract class BaseSearchAdapter<T>(DIFF: DiffUtil.ItemCallback<T>) :
-    ListAdapter<T, RecyclerView.ViewHolder>(DIFF) {
+    PagedListAdapter<T, RecyclerView.ViewHolder>(DIFF) {
     var keywords: String = ""
+
 }

@@ -128,13 +128,22 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchSongsResultResponse::class.java
                     )
-                    return fromJson.result.songs as List<T>
+                    return try {
+                        Logger.i("songs:" + fromJson.result.songs.toString())
+                        fromJson.result.songs as List<T>
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        emptyList()
+                    }
+
                 }
                 10 -> {
                     val fromJson = CoreApplication.GSON.fromJson<SearchAlbumsResultResponse>(
                         dataString,
                         SearchAlbumsResultResponse::class.java
                     )
+                    Logger.i("albums:" + fromJson.result.albums.toString())
+
                     return fromJson.result.albums as List<T>
                 }
                 100 -> {
@@ -142,6 +151,8 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchSingerResultResponse::class.java
                     )
+                    Logger.i("artists:" + fromJson.result.artists.toString())
+
                     return fromJson.result.artists as List<T>
                 }
                 1000 -> {
@@ -149,6 +160,8 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchPlayListResultResponse::class.java
                     )
+                    Logger.i("playlists:" + fromJson.result.playlists.toString())
+
                     return fromJson.result.playlists as List<T>
                 }
                 1002 -> {
@@ -156,6 +169,8 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchUsersResultResponse::class.java
                     )
+                    Logger.i("userprofiles:" + fromJson.result.userprofiles.toString())
+
                     return fromJson.result.userprofiles as List<T>
                 }
                 1009 -> {
@@ -163,6 +178,8 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchDjResultResponse::class.java
                     )
+                    Logger.i("djRadios:" + fromJson.result.djRadios.toString())
+
                     return fromJson.result.djRadios as List<T>
                 }
                 1014 -> {
@@ -170,6 +187,8 @@ class SearchResultDataSource<T>(
                         dataString,
                         SearchVideosResultResponse::class.java
                     )
+                    Logger.i("videos:" + fromJson.result.videos.toString())
+
                     return fromJson.result.videos as List<T>
                 }
                 else -> {
@@ -177,7 +196,7 @@ class SearchResultDataSource<T>(
                 }
             }
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Logger.e(e.toString())
             return emptyList()
         }

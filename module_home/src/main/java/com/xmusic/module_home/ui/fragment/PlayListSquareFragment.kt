@@ -39,7 +39,7 @@ class PlayListSquareFragment :
     private lateinit var adapter: PlayListSquareAdapter
 
     override val viewModel: PlayListFragmentViewModel by viewModels {
-        InjectorUtils.providePlayListFragmentViewModelFactory(this, NETWORK_IO)
+        InjectorUtils.providePlayListFragmentViewModelFactory( NETWORK_IO)
     }
 
     override val layoutId: Int

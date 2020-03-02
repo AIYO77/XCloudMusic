@@ -45,7 +45,6 @@ abstract class BaseBindingActivity<VB : ViewDataBinding> : AutoServerActivity() 
     open fun startObserve() {}
 
     override fun setContentView(layoutResID: Int) {
-        super.setContentView(layoutResID)
         val mBaseBinding: ActivityBaseBinding =
             DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_base, null, false)
         bindingView = DataBindingUtil.inflate(layoutInflater, layoutResID, null, false)
@@ -59,7 +58,8 @@ abstract class BaseBindingActivity<VB : ViewDataBinding> : AutoServerActivity() 
 
         val mContainer = mBaseBinding.root.findViewById(R.id.container) as RelativeLayout
         mContainer.addView(bindingView.root, 0)
-        window.setContentView(mBaseBinding.root)
+        super.setContentView(mBaseBinding.root)
+
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }

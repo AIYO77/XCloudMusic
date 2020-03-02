@@ -44,7 +44,7 @@ import kotlin.math.abs
 class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailViewModel>(),
     AppBarLayout.OnOffsetChangedListener {
 
-    private lateinit var mAdapter: PlayListAdapter
+    private var mAdapter: PlayListAdapter? = null
     private var songInfo: PlayListSimpleInfo? = null
     private var mPlaylist: PlayList? = null
     private var aCache: ACache? = null
@@ -71,7 +71,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
         }
         mAdapter = PlayListAdapter()
         playListRcy.setLayoutManager(LinearLayoutManager(this))
-        playListRcy.setAdapter(mAdapter)
+        playListRcy.setAdapter(mAdapter!!)
         playListRcy.getRecycleView().smoothScrollToPosition(0)
         playListAppBar.addOnOffsetChangedListener(this)
 
@@ -96,7 +96,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
 
         bindingView.headerLayout.executePendingBindings()
         bindingView.includePlayAll.setOnPlayAllClick {
-            mAdapter.playAll()
+            mAdapter?.playAll()
         }
     }
 
@@ -108,7 +108,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
             songInfo?.let {
                 loadHeaderUI(playlist)
             }
-            mAdapter.apply {
+            mAdapter?.apply {
                 mSubscribed = playlist.subscribed
                 mSubscribedCount = playlist.subscribedCount
                 mSubscribers = playlist.subscribers
@@ -139,7 +139,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
 
         viewModel.collectResult.observe(this, Observer {
             cancelLoading()
-            mAdapter.apply {
+            mAdapter?.apply {
                 if (it.result) {
                     mSubscribed = it.msg == "1"
                     if (mSubscribed) {
@@ -162,15 +162,15 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
     }
 
     private fun notifyAdapter(tracks: MutableList<Song>, privileges: List<Privilege>) {
-        notifyCollectView(mAdapter.mSubscribedCount)
-        mAdapter.setSongList(tracks, privileges)
+        notifyCollectView(mAdapter?.mSubscribedCount ?: 0)
+        mAdapter?.setSongList(tracks, privileges)
         bindingView.includePlayAll.trackSize = tracks.size
     }
 
     private fun notifyCollectView(subCount: Long) {
         includePlayAll.show()
         bindingView.includePlayAll.apply {
-            moreChoices.setSubscribedCount(mAdapter.mSubscribed, subCount,
+            moreChoices.setSubscribedCount(mAdapter?.mSubscribed?:false, subCount,
                 View.OnClickListener {
                     onCollect(1)
                 }, View.OnClickListener {
@@ -265,7 +265,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
 
     override fun updateTrack() {
         super.updateTrack()
-        mAdapter.notifyDataSetChanged()
+        mAdapter?.notifyDataSetChanged()
     }
 
     override fun showNetError() {
@@ -283,7 +283,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
 //                intent.putExtra(PLAYLIST_SIMPLE_INFO, simpleInfo)
                 DataHolder.getInstance().remove(PLAYLIST_SIMPLE_INFO)
                 DataHolder.getInstance().remove(PLAYLIST_INFO)
-                DataHolder.getInstance().setData(PLAYLIST_SIMPLE_INFO,simpleInfo)
+                DataHolder.getInstance().setData(PLAYLIST_SIMPLE_INFO, simpleInfo)
                 startActivity(intent)
             }
 

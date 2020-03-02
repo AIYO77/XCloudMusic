@@ -51,7 +51,7 @@ data class VideoItemData(
     fun haveSong(): Boolean = relateSong.isNullOrEmpty().not()
 
     fun getSongPic(): String = if (haveSong()) {
-        relateSong[0].al.picUrl
+        relateSong[0].al?.picUrl?:""
     } else ""
 }
 

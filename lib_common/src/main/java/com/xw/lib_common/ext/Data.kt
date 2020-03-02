@@ -17,10 +17,10 @@ import com.xw.lib_coremodel.model.bean.info.MusicInfo
 fun Song.toMusicInfo(): MusicInfo {
     val info = MusicInfo()
     info.songId = this.id
-    info.albumId = this.al.id.toLong()
-    info.albumName = this.al.name
-    info.albumPic = this.al.picUrl
-    info.artist = this.ar.arToString()
+    info.albumId = this.al?.id?.toLong()?:0
+    info.albumName = this.al?.name
+    info.albumPic = this.al?.picUrl
+    info.artist = this.ar?.arToString()
     info.islocal = false
     info.musicName = this.name
     return info

@@ -16,6 +16,7 @@
 
     <color name="color_4e4e4e">#4e4e4e</color>
     <color name="color_e4e4e4">#e4e4e4</color>
+    <color name="color_ebebeb">#ebebeb</color>
     <color name="color_e2e3e5">#e2e3e5</color>
     <color name="color_303030">#303030</color>
 
@@ -71,16 +72,21 @@
     <color name="banner_5784ad">#5784ad</color>
 
     <color name="color_3e3e3e">#3e3e3e</color>
+    <color name="color_333333">#333333</color>
     <color name="color_343434">#343434</color>
     <color name="color_363636">#363636</color>
     <color name="color_f2f2f2">#f2f2f2</color>
     <color name="color_f3f3f3">#f3f3f3</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
     <color name="color_2f2f2f">#2f2f2f</color>
     <color name="color_7c7c7c">#7c7c7c</color>
     <color name="color_cccccc">#cccccc</color>
     <color name="color_cbcbcb">#cbcbcb</color>
     <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="color_c6c6c6">#c6c6c6</color>
     <color name="color_606060">#606060</color>
+    <color name="color_5a5a5a">#5a5a5a</color>
+    <color name="color_575757">#575757</color>
     <!--item的5.0一下版本选择器颜色-->
     <color name="itemLowBackground">#d9d9d9</color>
     <!--item的水波纹颜色-->

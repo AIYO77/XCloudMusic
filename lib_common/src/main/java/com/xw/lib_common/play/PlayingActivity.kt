@@ -45,6 +45,7 @@ class PlayingActivity : BaseActivity<ActivityPlayingBinding, PlayingViewModel>()
     private var bgLaunch: Job? = null
     private var queueDialogFragment: PlayQueueDialogFragment? = null
     private var isNextOrPreSetPage = false //判断viewpager由手动滑动 还是setcruuentitem换页
+    private var isFirstScroll = true //判断viewpager第一次滑动
     private var mViewWeakReference: WeakReference<View>? = null
     private var mActiveView: View? = null
 
@@ -196,7 +197,6 @@ class PlayingActivity : BaseActivity<ActivityPlayingBinding, PlayingViewModel>()
         mAdapter = FragmentAdapter(supportFragmentManager)
         view_pager.adapter = mAdapter
         view_pager.setPageTransformer(true, PlaybarPagerTransformer())
-
         view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) = Unit
 
@@ -218,7 +218,8 @@ class PlayingActivity : BaseActivity<ActivityPlayingBinding, PlayingViewModel>()
                     isNextOrPreSetPage = false
                     return
                 } else {
-                    if (isNextOrPreSetPage.not()) {
+                    if (isNextOrPreSetPage.not() && isFirstScroll.not()) {
+                        Logger.i("position = $position  MusicPlayer.getQueuePosition() = ${MusicPlayer.getQueuePosition()}")
                         if (position < MusicPlayer.getQueuePosition() + 1) {
                             launch {
                                 delay(TIME_DELAY)
@@ -233,8 +234,8 @@ class PlayingActivity : BaseActivity<ActivityPlayingBinding, PlayingViewModel>()
                     }
                 }
                 isNextOrPreSetPage = false
+                isFirstScroll = false
             }
-
         })
     }
 

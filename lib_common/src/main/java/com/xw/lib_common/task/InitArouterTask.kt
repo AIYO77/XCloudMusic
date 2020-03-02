@@ -1,7 +1,7 @@
 package com.xw.lib_common.task
 
 import com.alibaba.android.arouter.launcher.ARouter
-import com.xing.launchstarter.task.Task
+import com.masterxing.launchstarter.task.Task
 import com.xw.lib_common.base.BaseApplication
 
 /**

@@ -32,10 +32,11 @@ class SearchSongsAdapter : BaseSearchAdapter<Song>(DIFF) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as SearchSongViewHolder) {
-            val song = getItem(position)
-            Logger.i(song.name)
-            bind(song,keywords, createVideoClick(), createMoreClick())
-            itemView.setOnClickListener {
+            getItem(position)?.let {
+                Logger.i(position.toString())
+                bind(it, keywords, createVideoClick(), createMoreClick())
+                itemView.setOnClickListener {
+                }
             }
         }
     }

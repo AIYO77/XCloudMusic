@@ -17,6 +17,8 @@
     <string name="label_confirm">确定</string>
     <string name="label_cancel">取消</string>
     <string name="label_go_setting">去设置</string>
+    <string name="label_go_login">立即登陆</string>
+    <string name="label_login_tip">登陆%s\n手机电脑多端同步，尽享海量高品质音乐</string>
 
     <string name="label_play_list_market">歌单广场</string>
     <string name="label_new_album">新碟</string>
@@ -76,4 +78,6 @@
     <string name="label_settle_in">已入驻</string>
     <string name="label_focused">已关注</string>
     <string name="label_focus">关注</string>
+
+    <string name="label_play_count">%s次播放</string>
 </resources>

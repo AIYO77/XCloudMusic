@@ -28,7 +28,9 @@ class SearchVideosAdapter : BaseSearchAdapter<SearchVideoItemInfo>(DIFF) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as SearchVideoViewHolder) {
-            holder.bind(getItem(position), keywords)
+            getItem(position)?.let {
+                bind(it, keywords)
+            }
             itemView.setOnClickListener {
 
             }

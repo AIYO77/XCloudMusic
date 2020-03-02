@@ -1,6 +1,7 @@
 package com.xmusic.module_search.ui.fragment
 
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -34,14 +35,29 @@ abstract class SearchResultVpFragment<T> :
 
     override fun initView() {
         super.initView()
-        resultVpRv.layoutManager = LinearLayoutManager(requireContext())
-        resultVpRv.adapter = adapter
+        resultVpRv.setLayoutManager(LinearLayoutManager(requireContext()))
+        resultVpRv.setAdapter(adapter)
     }
 
     override fun initData() {
         super.initData()
-        val data = DataHolder.getInstance().getData(SEARCH_TYPE) as SearchType
-        viewModel.showPlayList(data)
+        val data = arguments?.getSerializable(SEARCH_TYPE) as? SearchType
+        data?.let { viewModel.showPlayList(it) }
+
+    }
+
+    override fun startObserve() {
+        super.startObserve()
+        viewModel.posts.observe(this, Observer {
+            adapter.keywords = viewModel.getKeywords()
+            adapter.submitList(it){
+                val layoutManager = (resultVpRv.getRecycleView().layoutManager as LinearLayoutManager)
+                val position = layoutManager.findFirstCompletelyVisibleItemPosition()
+                if (position != RecyclerView.NO_POSITION) {
+                    resultVpRv.getRecycleView().scrollToPosition(position)
+                }
+            }
+        })
     }
 
     companion object {

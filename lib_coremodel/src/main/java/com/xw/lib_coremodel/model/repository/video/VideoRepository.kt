@@ -18,7 +18,7 @@ import java.util.concurrent.Executor
  * Desc:
  */
 class VideoRepository(context: Context, private val networkExecutor: Executor) :
-    BaseRepository(context) {
+    BaseVideoRepository(context) {
 
     suspend fun getVideoType(): VideoTypeResponse {
         return apiCall { MusicRetrofitClient.service.getVideoType() }

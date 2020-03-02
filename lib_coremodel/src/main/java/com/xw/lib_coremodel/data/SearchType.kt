@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 /**
  * @author: xingwei
@@ -20,5 +21,4 @@ data class SearchType(
     @ColumnInfo(name = "name")
     val name: String,
     var keywords: String = ""
-
-)
+):Serializable

@@ -15,6 +15,6 @@ class VideoViewModelFactory(private val videoRepository: VideoRepository) :
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return VideoViewModel(videoRepository) as T
+        return VideoListViewModel(videoRepository) as T
     }
 }

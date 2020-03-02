@@ -18,11 +18,10 @@ import java.util.concurrent.Executor
  * Desc:
  */
 class PlayListFragmentRepository(
-    private val coroutineScope: CoroutineScope,
     private val networkExecutor: Executor
 ) {
     fun postsOfPlayList(playListCat: PlayListCat, pageSize: Int): Listing<PlayList> {
-        val sourceFactory = PlayListDataSourceFactory(coroutineScope, networkExecutor, playListCat)
+        val sourceFactory = PlayListDataSourceFactory( networkExecutor, playListCat)
 
         val livePagedList = sourceFactory.toLiveData(
             config = Config(

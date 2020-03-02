@@ -26,7 +26,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textColor="@color/black_2d2d2d"
-            android:textSize="@dimen/font_12"
+            android:textSize="@dimen/font_13"
             app:layout_constraintStart_toEndOf="@id/songLogo"
             app:layout_constraintTop_toTopOf="@id/songLogo"
             tools:text="晴天" />
@@ -40,7 +40,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
             android:textColor="@color/color_7c7c7c"
-            android:textSize="@dimen/font_9"
+            android:textSize="@dimen/font_10"
             app:layout_constraintStart_toStartOf="@id/songName"
             app:layout_constraintTop_toBottomOf="@id/songName"
             tools:text="歌词歌词歌词歌词歌词歌词歌词歌词歌词歌词歌词歌歌词歌词歌词歌词歌词歌词歌词歌词" />

@@ -29,7 +29,9 @@ class SearchUsersAdapter : BaseSearchAdapter<UserInfo>(DIFF) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder as SearchUserViewHolder) {
-            bind(getItem(position), keywords)
+            getItem(position)?.let {
+                bind(it, keywords)
+            }
         }
     }
 
