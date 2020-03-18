@@ -1,6 +1,6 @@
 # XCloudMusic
 
-仿网易云音乐，疫情期间学习为目的，没有后台服务器。运行项目前需要先运行[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 跑一个本地的服务器
+仿网易云音乐，学习为目的。运行项目前需要先运行[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 跑一个本地的服务器
 
 **还有很多功能待完善，欢迎PR**
 
