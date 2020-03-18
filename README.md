@@ -29,12 +29,6 @@
 - [Glide](https://github.com/bumptech/glide)
 - [More..](https://github.com/masterxing/XCloudMusic/blob/master/lib_opensource/build.gradle)
 
-# 打赏
-<p>
-<img src="img/ali.jpeg" width="200" height="300"/>
-<img src="img/wx.jpeg" width="221" height="300"/>
-</p>
-
 # Disclaimer
 - XCloudMusic只用作个人学习研究，禁止用于商业及非法用途，如产生法律纠纷与本人无关
 - 音乐api来自于[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)，非官方版api，本软件不提供任何音频存储服务，如需下载音频，请支持正版！。
