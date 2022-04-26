@@ -1,3 +1,7 @@
+# 停止维护
+
+后续会考虑用Compose+MVI重写
+
 # XCloudMusic
 
 仿网易云音乐，学习为目的。运行项目前需要先运行[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 跑一个本地的服务器
